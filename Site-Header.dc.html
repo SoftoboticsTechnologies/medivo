@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</helmet>
+<header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);borderBottom:1px solid #E2E7EC;fontFamily:'Plus Jakarta Sans',system-ui,sans-serif">
+  <div style="maxWidth:1280px;margin:0 auto;padding:0 clamp(16px,3vw,40px);height:74px;display:flex;alignItems:center;gap:clamp(16px,2vw,32px)">
+    <a href="index.html" aria-label="Medivo Healthcare home" style="display:flex;alignItems:center;gap:10px;textDecoration:none;flexShrink:0">
+      <span style="width:26px;height:26px;border:2px solid #0E2338;display:flex;alignItems:center;justifyContent:center">
+        <span style="width:8px;height:8px;background:#B4622F;display:block"></span>
+      </span>
+      <span style="display:flex;flexDirection:column;lineHeight:1">
+        <span style="fontSize:16px;fontWeight:800;letterSpacing:0.06em;color:#0E2338">MEDIVO</span>
+        <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:9px;letterSpacing:0.18em;color:#6B7A88;marginTop:3px">HEALTHCARE</span>
+      </span>
+    </a>
+
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Primary" style="display:flex;alignItems:center;flexWrap:wrap;justifyContent:flex-end;gap:clamp(8px,1.4vw,22px);marginLeft:auto">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="8">
+          <div onMouseEnter="{{ item.onEnter }}" style="position:relative;display:flex;flexDirection:column;alignItems:center;paddingTop:4px">
+            <a href="{{ item.href }}" style="fontSize:13.5px;fontWeight:600;letterSpacing:0.01em;color:#2A3B49;textDecoration:none;whiteSpace:nowrap;padding:4px 0" style-hover="color:#0E2338">{{ item.label }}</a>
+            <span style="height:2px;width:100%;marginTop:6px;background:transparent">
+              <sc-if value="{{ item.isActive }}" hint-placeholder-val="{{ false }}">
+                <span style="display:block;height:2px;width:100%;background:#B4622F"></span>
+              </sc-if>
+            </span>
+          </div>
+        </sc-for>
+        <a href="Contact.dc.html" style="marginLeft:8px;background:#0E2338;color:#fff;fontSize:13.5px;fontWeight:600;padding:11px 18px;textDecoration:none;whiteSpace:nowrap;border:1px solid #0E2338" style-hover="background:#1668B3;borderColor:#1668B3">Request a Quote</a>
+      </nav>
+    </sc-if>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="marginLeft:auto;display:flex;alignItems:center;gap:10px">
+        <a href="tel:" aria-label="Call Medivo Healthcare" style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.1em;color:#1668B3;textDecoration:none;border:1px solid #D6DEE5;padding:11px 12px">CALL</a>
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Open navigation menu" aria-expanded="{{ menuOpen }}" style="width:44px;height:44px;border:1px solid #D6DEE5;background:#fff;display:flex;flexDirection:column;alignItems:center;justifyContent:center;gap:5px;cursor:pointer">
+          <span style="display:block;width:18px;height:1.5px;background:#0E2338"></span>
+          <span style="display:block;width:18px;height:1.5px;background:#0E2338"></span>
+          <span style="display:block;width:18px;height:1.5px;background:#0E2338"></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ servicesOpen }}" hint-placeholder-val="{{ false }}">
+    <div onMouseLeave="{{ closeServices }}" style="position:absolute;left:0;right:0;top:74px;background:#fff;borderTop:1px solid #E2E7EC;borderBottom:1px solid #E2E7EC;boxShadow:0 18px 40px -24px rgba(14,35,56,0.35)">
+      <div style="maxWidth:1280px;margin:0 auto;padding:26px clamp(16px,3vw,40px) 30px;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:2px">
+        <sc-for list="{{ serviceLinks }}" as="svc" hint-placeholder-count="5">
+          <a href="{{ svc.href }}" style="display:block;padding:16px 18px;textDecoration:none;border:1px solid transparent" style-hover="border:1px solid #E2E7EC;background:#F7F9FB">
+            <span style="display:block;fontFamily:'IBM Plex Mono',monospace;fontSize:10px;letterSpacing:0.16em;color:#B4622F">{{ svc.num }}</span>
+            <span style="display:block;fontSize:14.5px;fontWeight:700;color:#0E2338;marginTop:8px">{{ svc.label }}</span>
+            <span style="display:block;fontSize:12.5px;color:#5C6B78;marginTop:6px;lineHeight:1.5">{{ svc.note }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="borderTop:1px solid #E2E7EC;background:#fff;maxHeight:70vh;overflowY:auto">
+      <nav aria-label="Mobile" style="display:flex;flexDirection:column;padding:8px 0">
+        <sc-for list="{{ allLinks }}" as="item" hint-placeholder-count="13">
+          <a href="{{ item.href }}" style="padding:15px clamp(16px,3vw,40px);fontSize:15px;fontWeight:600;color:#0E2338;textDecoration:none;borderBottom:1px solid #EEF1F4">{{ item.label }}</a>
+        </sc-for>
+        <a href="Contact.dc.html" style="margin:14px clamp(16px,3vw,40px) 20px;background:#0E2338;color:#fff;fontSize:15px;fontWeight:700;padding:16px;textAlign:center;textDecoration:none">Request a Quote</a>
+      </nav>
+    </div>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:140},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1400, servicesOpen: false, menuOpen: false };
+  componentDidMount() {
+    this._r = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._r);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  renderVals() {
+    const active = this.props.active || '';
+    const nav = [
+      ['Home', 'index.html'], ['About', 'About.dc.html'], ['Services', 'Services.dc.html'],
+      ['Projects', 'Projects.dc.html'], ['Our Process', 'Process.dc.html'],
+      ['Safety & Quality', 'Safety-Quality.dc.html'], ['FAQ', 'FAQ.dc.html'], ['Contact', 'Contact.dc.html']
+    ];
+    const serviceLinks = [
+      { num: '01', label: 'RF Cage Installation & Repair', note: 'MRI room RF shielding, repair and maintenance.', href: 'RF-Cage.dc.html' },
+      { num: '02', label: 'Quench Pipe Solutions', note: 'Helium vent routing, inspection and repair.', href: 'Quench-Pipe.dc.html' },
+      { num: '03', label: 'Mechanical Installation & Dismantling', note: 'Positioning, installation, relocation.', href: 'Mechanical-Installation.dc.html' },
+      { num: '04', label: 'Unloading Services', note: 'Controlled unloading of imaging systems.', href: 'Unloading.dc.html' },
+      { num: '05', label: 'Passive Shielding Solutions', note: 'Facility-specific passive shielding.', href: 'Passive-Shielding.dc.html' }
+    ];
+    return {
+      isDesktop: this.state.w >= 1120,
+      isMobile: this.state.w < 1120,
+      menuOpen: this.state.menuOpen,
+      servicesOpen: this.state.servicesOpen && this.state.w >= 1120,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeServices: () => this.setState({ servicesOpen: false }),
+      serviceLinks,
+      navItems: nav.map(([label, href]) => ({
+        label, href, isActive: active === label,
+        onEnter: () => this.setState({ servicesOpen: label === 'Services' })
+      })),
+      allLinks: nav.slice(0, 3).concat(serviceLinks.map(s => [s.label, s.href]), nav.slice(3))
+        .map(x => Array.isArray(x) ? { label: x[0], href: x[1] } : x)
+    };
+  }
+}
+</script>
+</body>
+</html>

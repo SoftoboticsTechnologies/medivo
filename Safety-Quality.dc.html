@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Safety &amp; Quality — Medical Imaging Infrastructure Work | Medivo Healthcare</title>
+<meta name="description" content="Safety and quality approach at Medivo Healthcare: site safety, controlled equipment handling, installation quality, inspection, technical documentation and quality assurance." />
+<meta property="og:title" content="Safety &amp; Quality | Medivo Healthcare" />
+<meta property="og:description" content="How safety and quality are handled across medical imaging infrastructure projects." />
+<link rel="canonical" href="Safety-Quality.dc.html" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; background:#fff; overflow-x:hidden; }
+  a { color:#1668B3; }
+  a:hover { color:#0E2338; }
+  *:focus-visible { outline:2px solid #B4622F; outline-offset:2px; }
+</style>
+</helmet>
+
+<div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0E2338;background:#fff">
+<dc-import name="Site-Header" active="Safety &amp; Quality" hint-size="100%,74px"></dc-import>
+
+<section style="position:relative;background:#0B1A28;color:#fff;overflow:hidden">
+  <div style="position:absolute;inset:0;backgroundImage:linear-gradient(#12283A 1px,transparent 1px),linear-gradient(90deg,#12283A 1px,transparent 1px);backgroundSize:56px 56px;opacity:0.7"></div>
+  <div style="position:relative;maxWidth:1280px;margin:0 auto;padding:clamp(36px,4vw,64px) clamp(16px,3vw,40px) clamp(48px,6vw,88px)">
+    <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:#7E8F9D;display:flex;gap:10px;marginBottom:30px">
+      <a href="index.html" style="color:#7E8F9D;textDecoration:none">Home</a><span>/</span><span style="color:#D9A184">Safety &amp; Quality</span>
+    </nav>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:20ch">Safety and Quality at Every Stage</h1>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:#A9B8C4;marginTop:22px;maxWidth:60ch;textWrap:pretty">Imaging work happens inside operating facilities, around heavy equipment and near occupied departments. Both the method and the checks are planned with that in mind.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1280px;margin:0 auto;display:grid;gap:1px;background:#E2E7EC;border:1px solid #E2E7EC">
+    <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="7">
+      <article style="background:#fff;padding:clamp(26px,3vw,38px);display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:clamp(20px,3vw,44px);alignItems:start">
+        <div style="display:flex;alignItems:baseline;gap:14px">
+          <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:12px;letterSpacing:0.14em;color:#B4622F">{{ b.num }}</span>
+          <h2 style="fontSize:clamp(19px,2.1vw,24px);fontWeight:800;letterSpacing:-0.015em;lineHeight:1.22;margin:0">{{ b.title }}</h2>
+        </div>
+        <div>
+          <p style="fontSize:15.5px;lineHeight:1.75;color:#4A5A68;margin:0;maxWidth:56ch;textWrap:pretty">{{ b.desc }}</p>
+          <div style="display:grid;gap:8px;marginTop:16px">
+            <sc-for list="{{ b.points }}" as="pt" hint-placeholder-count="3">
+              <div style="display:flex;gap:11px;alignItems:baseline">
+                <span style="width:6px;height:6px;background:#B4622F;display:block;flexShrink:0;marginTop:7px"></span>
+                <span style="fontSize:14px;color:#2A3B49;lineHeight:1.55">{{ pt }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+
+  <div style="maxWidth:1280px;margin:28px auto 0;border:1px solid #E2E7EC;background:#F4F6F8;padding:clamp(24px,3vw,36px)">
+    <h2 style="fontSize:clamp(19px,2.1vw,24px);fontWeight:800;letterSpacing:-0.015em;margin:0">Standards &amp; Certifications</h2>
+    <p style="fontSize:15px;lineHeight:1.7;color:#4A5A68;margin:14px 0 0;maxWidth:70ch">Certification and approval details are published only where they have been confirmed by Medivo Healthcare.</p>
+    <p style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.12em;textTransform:uppercase;color:#0E2338;margin:16px 0 0">[DETAILS TO BE PROVIDED BY MEDIVO HEALTHCARE]</p>
+  </div>
+</section>
+
+<section style="background:#0B1A28;color:#fff;padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1280px;margin:0 auto;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:36px;alignItems:center">
+    <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:24ch">Discuss safety requirements for your site</h2>
+    <div style="display:flex;flexWrap:wrap;gap:14px">
+      <a href="Contact.dc.html" style="background:#B4622F;color:#fff;fontSize:15px;fontWeight:700;padding:17px 28px;textDecoration:none;border:1px solid #B4622F" style-hover="background:#fff;color:#0B1A28;borderColor:#fff">Request a Quote</a>
+      <a href="Process.dc.html" style="border:1px solid #354B5C;color:#fff;fontSize:15px;fontWeight:600;padding:17px 28px;textDecoration:none" style-hover="borderColor:#fff">Our Process</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Site-Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      blocks: [
+        { num: '01', title: 'Safety Philosophy', desc: 'Most risk on an imaging project comes from heavy loads moving through a working building. The method is therefore settled before work starts, and the plan is changed rather than improvised when site conditions differ from expectations.', points: ['Method agreed before mobilisation', 'Conditions re-checked on site', 'Work paused rather than forced when something does not match the plan'] },
+        { num: '02', title: 'Site Safety', desc: 'Working areas are set out with the facility so that routes, exclusion zones and timings are known to everyone affected, including departments that continue to operate nearby.', points: ['Access routes and exclusion zones agreed', 'Protection of finishes, doors and services', 'Working windows aligned with department activity'] },
+        { num: '03', title: 'Equipment Handling', desc: 'Handling is planned against the actual weights, dimensions and load paths involved, using arrangements suited to the equipment and the building rather than to a generic case.', points: ['Load paths and floor limits checked', 'Lifting and movement arrangements planned per site', 'Controlled placement into final position'] },
+        { num: '04', title: 'Installation Quality', desc: 'Installation follows the technical approach set during planning. Materials and practices are selected with durability and safety in mind, and detailing is completed rather than left to be resolved later.', points: ['Work set out against the equipment requirement', 'Penetrations and joints detailed as planned', 'Site changes recorded when they occur'] },
+        { num: '05', title: 'Inspection', desc: 'Completed work is reviewed before the area is released back to the facility, with applicable checks performed for the type of work carried out.', points: ['Visual and dimensional review', 'Applicable technical checks', 'Defects corrected before handover'] },
+        { num: '06', title: 'Technical Documentation', desc: 'Projects close out with the documentation required for the scope, so the facility has a record of what was installed and what was checked.', points: ['Record of installed work', 'Inspection and check records', 'Handover pack issued to the facility'] },
+        { num: '07', title: 'Quality Assurance', desc: 'Quality is treated as a sequence of checkpoints across the project rather than a final inspection, with communication to the facility at each stage.', points: ['Checkpoints at planning, execution and completion', 'Single point of contact during the project', 'Disruption to facility operations kept to a minimum'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

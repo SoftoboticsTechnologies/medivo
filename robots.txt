@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /Privacy.dc.html
+Disallow: /Terms.dc.html
+
+Sitemap: [SITE DOMAIN]/sitemap.xml

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>FAQ — MRI RF Cages, Quench Pipes &amp; Imaging Installation | Medivo Healthcare</title>
+<meta name="description" content="Answers on MRI RF cages, RF shielding requirements, quench pipes, RF cage repair, equipment unloading, dismantling, passive shielding and how to request a quotation from Medivo Healthcare." />
+<meta property="og:title" content="Frequently Asked Questions | Medivo Healthcare" />
+<meta property="og:description" content="Technical answers on RF shielding, quench venting, installation and equipment handling." />
+<link rel="canonical" href="FAQ.dc.html" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; background:#fff; overflow-x:hidden; }
+  a { color:#1668B3; }
+  a:hover { color:#0E2338; }
+  *:focus-visible { outline:2px solid #B4622F; outline-offset:2px; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an MRI RF cage?","acceptedAnswer":{"@type":"Answer","text":"An RF cage is a shielded enclosure around an MRI room, forming a continuous conductive barrier across walls, floor, ceiling, door and penetrations so external radiofrequency energy stays out of the scan environment."}},{"@type":"Question","name":"Why is RF shielding required for MRI rooms?","acceptedAnswer":{"@type":"Answer","text":"MRI relies on very low level radiofrequency signals. Nearby transmitters and building systems produce electromagnetic interference that appears as image artefacts, so shielding maintains a controlled imaging environment."}},{"@type":"Question","name":"What is an MRI quench pipe?","acceptedAnswer":{"@type":"Answer","text":"A quench pipe is the vent line that carries helium gas out of the magnet room during a quench event, so gas is discharged safely outside the building rather than into the occupied space."}},{"@type":"Question","name":"Do you repair existing RF cages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides RF cage maintenance and repair services."}},{"@type":"Question","name":"Do you provide MRI equipment unloading?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides unloading and placement services for MRI, CT and other imaging equipment."}},{"@type":"Question","name":"Do you provide equipment dismantling?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides mechanical dismantling and relocation support."}},{"@type":"Question","name":"Do you provide passive shielding?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides passive shielding solutions based on project requirements."}},{"@type":"Question","name":"How can I request a quotation?","acceptedAnswer":{"@type":"Answer","text":"Contact Medivo by phone, email, WhatsApp or through the website enquiry form."}}]}</script>
+</helmet>
+
+<div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0E2338;background:#fff">
+<dc-import name="Site-Header" active="FAQ" hint-size="100%,74px"></dc-import>
+
+<section style="position:relative;background:#0B1A28;color:#fff;overflow:hidden">
+  <div style="position:absolute;inset:0;backgroundImage:linear-gradient(#12283A 1px,transparent 1px),linear-gradient(90deg,#12283A 1px,transparent 1px);backgroundSize:56px 56px;opacity:0.7"></div>
+  <div style="position:relative;maxWidth:1280px;margin:0 auto;padding:clamp(36px,4vw,64px) clamp(16px,3vw,40px) clamp(48px,6vw,88px)">
+    <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:#7E8F9D;display:flex;gap:10px;marginBottom:30px">
+      <a href="index.html" style="color:#7E8F9D;textDecoration:none">Home</a><span>/</span><span style="color:#D9A184">FAQ</span>
+    </nav>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:20ch">Frequently Asked Questions</h1>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:#A9B8C4;marginTop:22px;maxWidth:58ch;textWrap:pretty">Technical background on shielding and quench venting, and practical answers on services and quotations.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1000px;margin:0 auto">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+      <div style="marginBottom:48px">
+        <h2 style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.18em;textTransform:uppercase;fontWeight:500;color:#B4622F;margin:0 0 8px">{{ g.title }}</h2>
+        <div style="borderTop:1px solid #E2E7EC">
+          <sc-for list="{{ g.items }}" as="f" hint-placeholder-count="4">
+            <div style="borderBottom:1px solid #E2E7EC">
+              <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.isOpen }}" style="width:100%;background:none;border:none;padding:22px 0;display:flex;gap:18px;alignItems:center;textAlign:left;cursor:pointer;fontFamily:inherit">
+                <h3 style="fontSize:17px;fontWeight:700;color:#0E2338;flexGrow:1;margin:0">{{ f.q }}</h3>
+                <span style="fontSize:21px;color:#8A98A5;flexShrink:0">{{ f.sign }}</span>
+              </button>
+              <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
+                <p style="fontSize:15.5px;lineHeight:1.75;color:#4A5A68;margin:0 0 26px;maxWidth:74ch;textWrap:pretty">{{ f.a }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+
+    <div style="border:1px solid #E2E7EC;background:#F4F6F8;padding:clamp(24px,3vw,32px)">
+      <h2 style="fontSize:18px;fontWeight:800;margin:0">Still have a question?</h2>
+      <p style="fontSize:15px;lineHeight:1.7;color:#4A5A68;margin:12px 0 0;maxWidth:64ch">Send the project details through the enquiry form and the team can respond with the technical position for your site.</p>
+      <a href="Contact.dc.html" style="display:inline-block;marginTop:20px;background:#0E2338;color:#fff;fontSize:14.5px;fontWeight:600;padding:15px 24px;textDecoration:none" style-hover="background:#1668B3">Talk to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Site-Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { open: '0-0' };
+  renderVals() {
+    const data = [
+      ['Technical background', [
+        ['What is an MRI RF cage?', 'An RF cage is a shielded enclosure around an MRI room. It forms a continuous conductive barrier across walls, floor, ceiling, door and penetrations so that external radiofrequency energy stays out of the scan environment and the scanner\u2019s own signals stay contained.'],
+        ['Why is RF shielding required for MRI rooms?', 'MRI imaging relies on very low level radiofrequency signals. Nearby transmitters, mobile networks, building electrical systems and other equipment produce electromagnetic interference that appears in images as artefacts or noise. Shielding maintains a controlled imaging environment so the scanner performs to specification.'],
+        ['What is an MRI quench pipe?', 'A quench pipe is the vent line that carries helium gas out of the magnet room during a quench event, when liquid helium boils off rapidly and expands into a large volume of cold gas. Its routing, sizing and sealing determine whether that gas is discharged safely outside the building rather than into the occupied space.'],
+        ['What is passive shielding?', 'Passive shielding is shielding built into the fabric around an imaging room to contain or attenuate a field. Whether it is required, and to what specification, depends on the equipment and the site.']
+      ]],
+      ['Services', [
+        ['Do you repair existing RF cages?', 'Yes. Medivo provides RF cage maintenance and repair services, including work on existing shielding, doors, panels and penetrations.'],
+        ['Do you provide MRI equipment unloading?', 'Yes. Medivo provides unloading and placement services for MRI, CT, and other imaging equipment.'],
+        ['Do you provide equipment dismantling?', 'Yes. Medivo provides mechanical dismantling and relocation support.'],
+        ['Do you provide passive shielding?', 'Yes. Medivo provides passive shielding solutions based on project requirements.'],
+        ['Is Medivo introducing new services?', 'Medivo continues to evaluate new technologies and partnerships in medical imaging infrastructure. Confirmed new services will be added to this page when available.']
+      ]],
+      ['Working with Medivo', [
+        ['How can I request a quotation?', 'Contact Medivo by phone, email, WhatsApp, or through the enquiry form on the contact page. Equipment details, site location and the project stage help the team respond usefully.'],
+        ['What happens after I enquire?', 'The requirement is discussed, a site assessment is arranged where it is needed, and a written quotation follows once the technical approach is clear. The full sequence is set out on the process page.'],
+        ['Which areas do you work in?', 'Service area is confirmed by Medivo Healthcare. [SERVICE AREA]']
+      ]]
+    ];
+    return {
+      groups: data.map(([title, items], gi) => ({
+        title,
+        items: items.map(([q, a], i) => {
+          const key = gi + '-' + i;
+          return {
+            q, a,
+            isOpen: this.state.open === key,
+            sign: this.state.open === key ? '\u2212' : '+',
+            toggle: () => this.setState(s => ({ open: s.open === key ? '' : key }))
+          };
+        })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

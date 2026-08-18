@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Our Process — Site Assessment to Handover | Medivo Healthcare</title>
+<meta name="description" content="How a Medivo Healthcare project runs: requirement discussion, site assessment, technical planning, quotation, preparation, installation, inspection and handover." />
+<meta property="og:title" content="Our Process | Medivo Healthcare" />
+<meta property="og:description" content="The full project lifecycle for medical imaging infrastructure work, from first discussion to handover." />
+<link rel="canonical" href="Process.dc.html" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; background:#fff; overflow-x:hidden; }
+  a { color:#1668B3; }
+  a:hover { color:#0E2338; }
+  *:focus-visible { outline:2px solid #B4622F; outline-offset:2px; }
+</style>
+</helmet>
+
+<div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0E2338;background:#fff">
+<dc-import name="Site-Header" active="Our Process" hint-size="100%,74px"></dc-import>
+
+<section style="position:relative;background:#0B1A28;color:#fff;overflow:hidden">
+  <div style="position:absolute;inset:0;backgroundImage:linear-gradient(#12283A 1px,transparent 1px),linear-gradient(90deg,#12283A 1px,transparent 1px);backgroundSize:56px 56px;opacity:0.7"></div>
+  <div style="position:relative;maxWidth:1280px;margin:0 auto;padding:clamp(36px,4vw,64px) clamp(16px,3vw,40px) clamp(48px,6vw,88px)">
+    <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:#7E8F9D;display:flex;gap:10px;marginBottom:30px">
+      <a href="index.html" style="color:#7E8F9D;textDecoration:none">Home</a><span>/</span><span style="color:#D9A184">Our Process</span>
+    </nav>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:22ch">From Site Assessment to Project Handover</h1>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:#A9B8C4;marginTop:22px;maxWidth:60ch;textWrap:pretty">Eight stages describe how a project runs, from the first discussion of a requirement through to the documentation issued at handover.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1000px;margin:0 auto">
+    <sc-for list="{{ stages }}" as="s" hint-placeholder-count="8">
+      <article style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:clamp(20px,3vw,48px);padding:32px 0;borderTop:1px solid #E2E7EC">
+        <div style="display:flex;alignItems:baseline;gap:16px">
+          <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:13px;letterSpacing:0.14em;color:#B4622F">{{ s.num }}</span>
+          <h2 style="fontSize:clamp(19px,2.1vw,25px);fontWeight:800;letterSpacing:-0.015em;lineHeight:1.2;margin:0">{{ s.title }}</h2>
+        </div>
+        <div>
+          <p style="fontSize:15.5px;lineHeight:1.75;color:#4A5A68;margin:0;maxWidth:56ch;textWrap:pretty">{{ s.desc }}</p>
+          <p style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.12em;textTransform:uppercase;color:#8A98A5;margin:14px 0 0">{{ s.output }}</p>
+        </div>
+      </article>
+    </sc-for>
+    <div style="borderTop:1px solid #E2E7EC;paddingTop:28px">
+      <p style="fontSize:14px;lineHeight:1.7;color:#5C6B78;margin:0;maxWidth:70ch">Support arrangements beyond handover depend on the scope agreed for the individual project. [POST HANDOVER SUPPORT SCOPE TO BE CONFIRMED BY MEDIVO HEALTHCARE]</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0B1A28;color:#fff;padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1280px;margin:0 auto;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:36px;alignItems:center">
+    <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:24ch">Start with a requirement discussion</h2>
+    <div style="display:flex;flexWrap:wrap;gap:14px">
+      <a href="Contact.dc.html" style="background:#B4622F;color:#fff;fontSize:15px;fontWeight:700;padding:17px 28px;textDecoration:none;border:1px solid #B4622F" style-hover="background:#fff;color:#0B1A28;borderColor:#fff">Request a Quote</a>
+      <a href="Safety-Quality.dc.html" style="border:1px solid #354B5C;color:#fff;fontSize:15px;fontWeight:600;padding:17px 28px;textDecoration:none" style-hover="borderColor:#fff">Safety &amp; Quality</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Site-Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stages: [
+        { num: '01', title: 'Requirement Discussion', desc: 'The starting point is what the facility needs: the equipment involved, the room, the stage the project is at, and the timeline being worked to.', output: 'Output — scope understood in outline' },
+        { num: '02', title: 'Site Assessment', desc: 'The site is reviewed in person where possible: room dimensions and structure, access routes, existing services, floor conditions and anything that constrains the work.', output: 'Output — site conditions recorded' },
+        { num: '03', title: 'Technical Planning', desc: 'The technical approach is defined against the equipment requirement, covering method, sequence, materials, penetrations and coordination with other trades on site.', output: 'Output — installation approach defined' },
+        { num: '04', title: 'Quotation', desc: 'Scope, inclusions and exclusions are set out so the facility can see what is covered before the project is committed.', output: 'Output — written quotation issued' },
+        { num: '05', title: 'Preparation', desc: 'Materials, equipment and site requirements are prepared, and working windows and access arrangements are confirmed with the facility.', output: 'Output — site and materials ready' },
+        { num: '06', title: 'Installation / Execution', desc: 'The work is carried out: shielding, quench venting, mechanical installation, unloading or dismantling, according to the agreed method and sequence.', output: 'Output — work carried out on site' },
+        { num: '07', title: 'Inspection', desc: 'Completed work is reviewed and applicable checks are performed before the area is released back to the facility.', output: 'Output — checks completed and recorded' },
+        { num: '08', title: 'Handover', desc: 'The project is closed out with the facility and the required project documentation is issued.', output: 'Output — documentation issued' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

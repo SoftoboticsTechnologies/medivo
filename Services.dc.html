@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Services — MRI RF Shielding, Quench Pipe, Installation &amp; Unloading | Medivo Healthcare</title>
+<meta name="description" content="Medivo Healthcare services: MRI RF cage installation and repair, quench pipe solutions, mechanical installation and dismantling, medical imaging equipment unloading, and passive shielding." />
+<meta property="og:title" content="Medical Imaging Infrastructure Services | Medivo Healthcare" />
+<meta property="og:description" content="Five technical services supporting MRI and imaging environments, from RF shielding to equipment unloading." />
+<link rel="canonical" href="Services.dc.html" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; background:#fff; overflow-x:hidden; }
+  a { color:#1668B3; }
+  a:hover { color:#0E2338; }
+  *:focus-visible { outline:2px solid #B4622F; outline-offset:2px; }
+</style>
+</helmet>
+
+<div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0E2338;background:#fff">
+<dc-import name="Site-Header" active="Services" hint-size="100%,74px"></dc-import>
+
+<section style="background:#0B1A28;color:#fff;padding:clamp(40px,5vw,72px) clamp(16px,3vw,40px) clamp(48px,6vw,80px)">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:#7E8F9D;display:flex;gap:10px;marginBottom:32px">
+      <a href="index.html" style="color:#7E8F9D;textDecoration:none">Home</a><span>/</span><span style="color:#D9A184">Services</span>
+    </nav>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:24ch">Our Medical Imaging Infrastructure Services</h1>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:#A9B8C4;marginTop:22px;maxWidth:60ch;textWrap:pretty">Technical services designed to support critical imaging environments, from installation through maintenance and equipment handling.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1280px;margin:0 auto;display:grid;gap:1px;background:#E2E7EC;border:1px solid #E2E7EC">
+    <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+      <article style="background:#fff;padding:clamp(26px,3vw,40px);display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(24px,3vw,48px);alignItems:start">
+        <div>
+          <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.16em;color:#B4622F">{{ s.num }}</span>
+          <h2 style="fontSize:clamp(21px,2.2vw,27px);fontWeight:800;letterSpacing:-0.015em;lineHeight:1.2;margin:14px 0 0">{{ s.title }}</h2>
+          <p style="fontSize:15.5px;lineHeight:1.7;color:#4A5A68;margin:16px 0 0;maxWidth:52ch;textWrap:pretty">{{ s.desc }}</p>
+          <a href="{{ s.href }}" style="display:inline-block;marginTop:24px;fontSize:14.5px;fontWeight:700;color:#0E2338;textDecoration:none;borderBottom:2px solid #B4622F;paddingBottom:4px">{{ s.cta }}</a>
+        </div>
+        <div style="display:grid;gap:1px;background:#E2E7EC;border:1px solid #E2E7EC">
+          <sc-for list="{{ s.points }}" as="pt" hint-placeholder-count="3">
+            <div style="background:#F7F9FB;padding:14px 18px;display:flex;gap:12px;alignItems:center">
+              <span style="width:6px;height:6px;background:#B4622F;display:block;flexShrink:0"></span>
+              <span style="fontSize:14px;fontWeight:600;color:#2A3B49">{{ pt }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+
+  <div style="maxWidth:1280px;margin:32px auto 0;background:#0B1A28;color:#fff;padding:clamp(26px,3vw,40px);display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:32px">
+    <div>
+      <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;textTransform:uppercase;color:#D9A184">Positioning statement</span>
+      <h2 style="fontSize:clamp(20px,2vw,26px);fontWeight:800;margin:14px 0 0">Future Services &amp; Expansion</h2>
+    </div>
+    <div>
+      <p style="fontSize:15.5px;lineHeight:1.7;color:#A9B8C4;margin:0;maxWidth:56ch">Medivo Healthcare continues to evaluate new technologies and technical partnerships in medical imaging infrastructure. This describes direction rather than a delivered service, and is not available for quotation. Confirmed additions will be published on this page.</p>
+    </div>
+  </div>
+
+  <p style="maxWidth:1280px;margin:24px auto 0;fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.1em;textTransform:uppercase;color:#7B8894">Where scope is still being confirmed for launch: [SERVICE DETAILS TO BE CONFIRMED]</p>
+</section>
+
+<section style="background:#0B1A28;color:#fff;padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1280px;margin:0 auto;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:36px;alignItems:center">
+    <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:22ch">Not sure which service your project needs?</h2>
+    <div style="display:flex;flexWrap:wrap;gap:14px">
+      <a href="Contact.dc.html" style="background:#B4622F;color:#fff;fontSize:15px;fontWeight:700;padding:17px 28px;textDecoration:none;border:1px solid #B4622F" style-hover="background:#fff;color:#0B1A28;borderColor:#fff">Request a Quote</a>
+      <a href="Process.dc.html" style="border:1px solid #354B5C;color:#fff;fontSize:15px;fontWeight:600;padding:17px 28px;textDecoration:none" style-hover="borderColor:#fff">See Our Process</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Site-Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      services: [
+        { num: '01', title: 'RF Cage Installation & Repair', href: 'RF-Cage.dc.html', cta: 'Explore RF Shielding →', desc: 'Design and installation of RF shielding cages for MRI rooms, with maintenance and repair services to keep systems performing correctly.', points: ['New RF cage installation', 'Repair of existing shielding', 'Maintenance and inspection', 'Doors, windows and penetrations'] },
+        { num: '02', title: 'Quench Pipe Solutions', href: 'Quench-Pipe.dc.html', cta: 'Explore Quench Pipe Services →', desc: 'Installation of quench pipes for MRI systems to route helium gas venting correctly, along with inspection and repair of existing quench pipes.', points: ['Quench pipe installation', 'Vent route planning', 'Inspection of existing pipes', 'Repair and sealing work'] },
+        { num: '03', title: 'Mechanical Installation & Dismantling', href: 'Mechanical-Installation.dc.html', cta: 'Explore Mechanical Services →', desc: 'Handling, positioning, and mechanical installation of medical imaging systems, plus dismantling and relocation of heavy imaging equipment.', points: ['Equipment positioning', 'Mechanical installation', 'Dismantling', 'Relocation support'] },
+        { num: '04', title: 'Unloading Services', href: 'Unloading.dc.html', cta: 'Explore Unloading Services →', desc: 'Unloading and placement of MRI, CT, and other imaging systems, using equipment and trained handling to avoid damage during the process.', points: ['MRI and CT unloading', 'Site access planning', 'Controlled lifting and movement', 'Placement in final position'] },
+        { num: '05', title: 'Passive Shielding Solutions', href: 'Passive-Shielding.dc.html', cta: 'Explore Passive Shielding →', desc: 'Passive shielding to support MRI and imaging room requirements, with solutions adapted to the specific facility.', points: ['Site assessment', 'Solution planning', 'Installation', 'Post installation checks'] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

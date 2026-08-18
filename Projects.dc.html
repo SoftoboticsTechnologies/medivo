@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Projects — MRI RF Shielding, Quench Pipe &amp; Installation Work | Medivo Healthcare</title>
+<meta name="description" content="Medical imaging infrastructure projects by Medivo Healthcare: RF shielding, quench pipe, mechanical installation, dismantling, unloading and passive shielding work." />
+<meta property="og:title" content="Projects | Medivo Healthcare" />
+<meta property="og:description" content="A closer look at medical imaging infrastructure and technical projects." />
+<link rel="canonical" href="Projects.dc.html" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; background:#fff; overflow-x:hidden; }
+  a { color:#1668B3; }
+  a:hover { color:#0E2338; }
+  *:focus-visible { outline:2px solid #B4622F; outline-offset:2px; }
+</style>
+</helmet>
+
+<div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0E2338;background:#fff">
+<dc-import name="Site-Header" active="Projects" hint-size="100%,74px"></dc-import>
+
+<section style="position:relative;background:#0B1A28;color:#fff;overflow:hidden">
+  <div style="position:absolute;inset:0;backgroundImage:linear-gradient(#12283A 1px,transparent 1px),linear-gradient(90deg,#12283A 1px,transparent 1px);backgroundSize:56px 56px;opacity:0.7"></div>
+  <div style="position:relative;maxWidth:1280px;margin:0 auto;padding:clamp(36px,4vw,64px) clamp(16px,3vw,40px) clamp(48px,6vw,88px)">
+    <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:#7E8F9D;display:flex;gap:10px;marginBottom:30px">
+      <a href="index.html" style="color:#7E8F9D;textDecoration:none">Home</a><span>/</span><span style="color:#D9A184">Projects</span>
+    </nav>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:20ch">Our Recent Work</h1>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:#A9B8C4;marginTop:22px;maxWidth:60ch;textWrap:pretty">A closer look at our medical imaging infrastructure and technical projects. Only verified project records are published here.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(36px,4vw,56px) clamp(16px,3vw,40px) clamp(48px,6vw,88px)">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <div role="group" aria-label="Filter projects by service" style="display:flex;flexWrap:wrap;gap:10px;paddingBottom:28px;borderBottom:1px solid #E2E7EC">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="7">
+        <button type="button" onClick="{{ f.select }}" aria-pressed="{{ f.isActive }}" style="background:none;border:1px solid #DCE2E8;padding:0;cursor:pointer;fontFamily:inherit" style-hover="borderColor:#0E2338">
+          <span style="display:block;padding:11px 16px 9px;fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:#2A3B49">{{ f.label }}</span>
+          <sc-if value="{{ f.isActive }}" hint-placeholder-val="{{ false }}">
+            <span style="display:block;height:2px;background:#B4622F"></span>
+          </sc-if>
+        </button>
+      </sc-for>
+    </div>
+
+    <p style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.12em;textTransform:uppercase;color:#8A98A5;margin:24px 0 0">{{ resultLabel }}</p>
+
+    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:20px;marginTop:24px">
+      <sc-for list="{{ visible }}" as="p" hint-placeholder-count="6">
+        <article style="border:1px solid #E2E7EC;background:#fff;display:flex;flexDirection:column">
+          <div style="aspectRatio:16/10;background:#EDF0F3;backgroundImage:repeating-linear-gradient(135deg,#E3E8ED 0 11px,#EDF0F3 11px 22px);borderBottom:1px solid #E2E7EC;display:flex;alignItems:flex-end;padding:14px;position:relative;overflow:hidden">
+            <img src="{{ p.img }}" alt="{{ p.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;objectFit:cover;display:block" /><span style="position:relative;fontFamily:'IBM Plex Mono',monospace;fontSize:9.5px;letterSpacing:0.12em;textTransform:uppercase;color:#5C6B78;background:#fff;border:1px solid #DCE2E8;padding:6px 8px">{{ p.imageNote }}</span>
+          </div>
+          <div style="padding:26px;display:flex;flexDirection:column;flexGrow:1">
+            <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10px;letterSpacing:0.14em;textTransform:uppercase;color:#B4622F">{{ p.service }}</span>
+            <h2 style="fontSize:18px;fontWeight:800;letterSpacing:-0.01em;margin:12px 0 0">{{ p.title }}</h2>
+            <div style="display:grid;gap:1px;background:#EEF1F4;border:1px solid #EEF1F4;marginTop:16px">
+              <div style="background:#F7F9FB;padding:9px 12px;display:flex;gap:10px;justifyContent:space-between">
+                <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:9.5px;letterSpacing:0.12em;textTransform:uppercase;color:#8A98A5">Location</span>
+                <span style="fontSize:12.5px;fontWeight:600;color:#2A3B49;textAlign:right">{{ p.location }}</span>
+              </div>
+              <div style="background:#F7F9FB;padding:9px 12px;display:flex;gap:10px;justifyContent:space-between">
+                <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:9.5px;letterSpacing:0.12em;textTransform:uppercase;color:#8A98A5">Equipment</span>
+                <span style="fontSize:12.5px;fontWeight:600;color:#2A3B49;textAlign:right">{{ p.equipment }}</span>
+              </div>
+              <div style="background:#F7F9FB;padding:9px 12px;display:flex;gap:10px;justifyContent:space-between">
+                <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:9.5px;letterSpacing:0.12em;textTransform:uppercase;color:#8A98A5">Completed</span>
+                <span style="fontSize:12.5px;fontWeight:600;color:#2A3B49;textAlign:right">{{ p.completed }}</span>
+              </div>
+            </div>
+            <p style="fontSize:14px;lineHeight:1.65;color:#5C6B78;margin:16px 0 0;flexGrow:1">{{ p.desc }}</p>
+            <p style="fontFamily:'IBM Plex Mono',monospace;fontSize:9.5px;letterSpacing:0.12em;textTransform:uppercase;color:#8A98A5;margin:16px 0 0">{{ p.highlights }}</p>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+
+    <div style="border:1px solid #E2E7EC;background:#F4F6F8;padding:clamp(24px,3vw,32px);marginTop:28px">
+      <h2 style="fontSize:17px;fontWeight:800;margin:0">Project records</h2>
+      <p style="fontSize:14.5px;lineHeight:1.7;color:#4A5A68;margin:12px 0 0;maxWidth:76ch">Entries above are placeholders. Project titles, locations, equipment, dates, descriptions and photographs are published once supplied and approved by Medivo Healthcare, and facility names are used only with permission.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0B1A28;color:#fff;padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1280px;margin:0 auto;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:36px;alignItems:center">
+    <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:24ch">Have a similar project in planning?</h2>
+    <div style="display:flex;flexWrap:wrap;gap:14px">
+      <a href="Contact.dc.html" style="background:#B4622F;color:#fff;fontSize:15px;fontWeight:700;padding:17px 28px;textDecoration:none;border:1px solid #B4622F" style-hover="background:#fff;color:#0B1A28;borderColor:#fff">Request a Quote</a>
+      <a href="Services.dc.html" style="border:1px solid #354B5C;color:#fff;fontSize:15px;fontWeight:600;padding:17px 28px;textDecoration:none" style-hover="borderColor:#fff">View Services</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Site-Footer" hint-size="100%,480px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { filter: 'All' };
+  renderVals() {
+    const cats = ['All', 'RF Shielding', 'Quench Pipe', 'Installation', 'Dismantling', 'Unloading', 'Passive Shielding'];
+    const all = ['RF Shielding', 'Quench Pipe', 'Installation', 'Dismantling', 'Unloading', 'Passive Shielding'].map((c, i) => ({
+      service: c,
+      cat: c,
+      title: '[PROJECT NAME]',
+      location: '[LOCATION]',
+      equipment: '[EQUIPMENT]',
+      completed: '[DATE]',
+      desc: '[PROJECT DESCRIPTION TO BE PROVIDED BY MEDIVO HEALTHCARE]',
+      highlights: 'Technical highlights — [TO BE PROVIDED]',
+      imageNote: 'reference photo — wikimedia commons',
+      img: ['https://commons.wikimedia.org/wiki/Special:FilePath/Modern_3T_MRI.JPG?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI-tomograph.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI_installation.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI_Scanner_Mark_One.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/US_Navy_111005-O-KK908-128_An_Antonov_124-100M_cargo_aircraft_delivers_an_MRI_machine_to_the_Role_3_Medical_Facility_at_Camp_Bastion.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/An_MRI_scanner.JPG?width=1000'][i],
+      alt: ['MRI room with RF shielded enclosure', 'MRI magnet and room services', 'Imaging system being installed', 'MRI scanner unit', 'MRI system being unloaded on site', 'MRI scanner in an imaging room'][i]
+    }));
+    const visible = this.state.filter === 'All' ? all : all.filter(p => p.cat === this.state.filter);
+    return {
+      visible,
+      resultLabel: visible.length + (visible.length === 1 ? ' placeholder record' : ' placeholder records') + ' — ' + this.state.filter,
+      filters: cats.map(c => ({
+        label: c,
+        isActive: this.state.filter === c,
+        select: () => this.setState({ filter: c })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
