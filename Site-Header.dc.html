@@ -12,9 +12,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </helmet>
 <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);borderBottom:1px solid #E2E7EC;fontFamily:'Plus Jakarta Sans',system-ui,sans-serif">
-  <div style="maxWidth:1280px;margin:0 auto;padding:0 clamp(16px,3vw,40px);height:74px;display:grid;gridTemplateColumns:1fr auto 1fr;alignItems:center;gap:clamp(16px,2vw,32px)">
-    <a href="index.html" aria-label="Medivo Healthcare home" style="grid-column:1;justify-self:start;display:flex;alignItems:center;textDecoration:none;flexShrink:0">
-      <img src="assets/Medivo%20logo/medivo-horizontal.png" alt="Medivo Healthcare" style="height:34px;width:auto;display:block" />
+  <div style="maxWidth:1280px;margin:0 auto;padding:10px clamp(16px,3vw,40px);minHeight:74px;display:grid;gridTemplateColumns:1fr auto 1fr;alignItems:center;gap:clamp(16px,2vw,32px)">
+    <a href="index.html" aria-label="Medivo Healthcare home" style="grid-column:1;justify-self:start;display:flex;alignItems:center;textDecoration:none;flexShrink:0;minWidth:0">
+      <img src="assets/Medivo%20logo/full%20logo.png" alt="Medivo Healthcare" style="height:clamp(38px,7vw,56px);width:auto;maxWidth:100%;display:block" />
     </a>
 
     <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
