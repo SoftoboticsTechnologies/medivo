@@ -18,17 +18,16 @@
 <style>
   html, body { margin:0; background:#fff; overflow-x:hidden; }
   a { color:#0B266B; }
-  a:hover { color:#00A87E; }
+  a:hover { color:#0B266B; }
   *:focus-visible { outline:2px solid #0B266B; outline-offset:2px; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an MRI RF cage?","acceptedAnswer":{"@type":"Answer","text":"An RF cage is a shielded enclosure around an MRI room, forming a continuous conductive barrier across walls, floor, ceiling, door and penetrations so external radiofrequency energy stays out of the scan environment."}},{"@type":"Question","name":"Why is RF shielding required for MRI rooms?","acceptedAnswer":{"@type":"Answer","text":"MRI relies on very low level radiofrequency signals. Nearby transmitters and building systems produce electromagnetic interference that appears as image artefacts, so shielding maintains a controlled imaging environment."}},{"@type":"Question","name":"What is an MRI quench pipe?","acceptedAnswer":{"@type":"Answer","text":"A quench pipe is the vent line that carries helium gas out of the magnet room during a quench event, so gas is discharged safely outside the building rather than into the occupied space."}},{"@type":"Question","name":"Do you repair existing RF cages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides RF cage maintenance and repair services."}},{"@type":"Question","name":"Do you provide MRI equipment unloading?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides unloading and placement services for MRI, CT and other imaging equipment."}},{"@type":"Question","name":"Do you provide equipment dismantling?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides mechanical dismantling and relocation support."}},{"@type":"Question","name":"Do you provide passive shielding?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides passive shielding solutions based on project requirements."}},{"@type":"Question","name":"How can I request a quotation?","acceptedAnswer":{"@type":"Answer","text":"Contact Medivo by phone, email, WhatsApp or through the website enquiry form."}}]}</script>
 </helmet>
 
-<div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#00A87E;background:#fff">
+<div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B266B;background:#fff">
 <dc-import name="Site-Header" active="FAQ" hint-size="100%,74px"></dc-import>
 
-<section style="position:relative;background:#00A87E;color:#fff;overflow:hidden">
-  <div style="position:absolute;inset:0;backgroundImage:linear-gradient(rgba(255,255,255,0.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.15) 1px,transparent 1px);backgroundSize:56px 56px;opacity:0.7"></div>
+<section style="position:relative;background:#0B266B;color:#fff;overflow:hidden">
   <div style="position:relative;maxWidth:1280px;margin:0 auto;padding:clamp(36px,4vw,64px) clamp(16px,3vw,40px) clamp(48px,6vw,88px)">
     <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:rgba(255,255,255,0.72);display:flex;gap:10px;marginBottom:30px">
       <a href="index.html" style="color:rgba(255,255,255,0.72);textDecoration:none">Home</a><span>/</span><span style="color:#fff">FAQ</span>
@@ -47,7 +46,7 @@
           <sc-for list="{{ g.items }}" as="f" hint-placeholder-count="4">
             <div style="borderBottom:1px solid #E2E7EC">
               <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.isOpen }}" style="width:100%;background:none;border:none;padding:22px 0;display:flex;gap:18px;alignItems:center;textAlign:left;cursor:pointer;fontFamily:inherit">
-                <h3 style="fontSize:17px;fontWeight:700;color:#00A87E;flexGrow:1;margin:0">{{ f.q }}</h3>
+                <h3 style="fontSize:17px;fontWeight:700;color:#0B266B;flexGrow:1;margin:0">{{ f.q }}</h3>
                 <span style="fontSize:21px;color:#8A98A5;flexShrink:0">{{ f.sign }}</span>
               </button>
               <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
@@ -62,7 +61,7 @@
     <div style="border:1px solid #E2E7EC;background:#F4F6F8;padding:clamp(24px,3vw,32px)">
       <h2 style="fontSize:18px;fontWeight:800;margin:0">Still have a question?</h2>
       <p style="fontSize:15px;lineHeight:1.7;color:#4A5A68;margin:12px 0 0;maxWidth:64ch">Send the project details through the enquiry form and the team can respond with the technical position for your site.</p>
-      <a href="Contact.dc.html" style="display:inline-block;marginTop:20px;background:#0B266B;color:#fff;fontSize:14.5px;fontWeight:600;padding:15px 24px;textDecoration:none" style-hover="background:#00A87E">Talk to Our Team</a>
+      <a href="Contact.dc.html" style="display:inline-block;marginTop:20px;background:#0B266B;color:#fff;fontSize:14.5px;fontWeight:600;padding:15px 24px;textDecoration:none" style-hover="background:#0B266B">Talk to Our Team</a>
     </div>
   </div>
 </section>
