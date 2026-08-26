@@ -148,6 +148,23 @@
   </div>
 </section>
 
+<section aria-labelledby="certifications-h" style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <div style="textAlign:center;maxWidth:56ch;margin:0 auto">
+      <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;fontWeight:700;letterSpacing:0.2em;textTransform:uppercase;color:#0B266B">Certifications</span>
+      <h2 id="certifications-h" style="fontSize:clamp(24px,3vw,34px);lineHeight:1.16;letterSpacing:-0.02em;fontWeight:800;margin:14px 0 0">Certified to Recognised Standards</h2>
+    </div>
+    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:1px;marginTop:40px;background:#E2E7EC;border:1px solid #E2E7EC">
+      <sc-for list="{{ certifications }}" as="c" hint-placeholder-count="5">
+        <div style="background:#fff;padding:28px 22px;textAlign:center;display:flex;flexDirection:column;alignItems:center;gap:14px">
+          <img src="{{ c.logo }}" alt="{{ c.title }}" style="height:64px;width:auto;maxWidth:100%;objectFit:contain" />
+          <h3 style="fontSize:14.5px;fontWeight:800;color:#0B266B;margin:0">{{ c.title }}</h3>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
 <section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px);background:#F4F6F8;borderTop:1px solid #E2E7EC">
   <div style="maxWidth:1280px;margin:0 auto">
     <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">Why Medivo</h2>
@@ -186,6 +203,13 @@ class Component extends DCLogic {
         { num: '03', title: 'Mechanical Installation & Dismantling', desc: 'Positioning, mechanical installation, dismantling and relocation of imaging systems.', href: 'Mechanical-Installation.dc.html' },
         { num: '04', title: 'Unloading Services', desc: 'Controlled unloading and placement of MRI, CT and other imaging equipment.', href: 'Unloading.dc.html' },
         { num: '05', title: 'Passive Shielding Solutions', desc: 'Passive shielding planned around the requirements of the individual facility.', href: 'Passive-Shielding.dc.html' }
+      ],
+      certifications: [
+        { title: 'ISO 9001:2015', logo: 'assets/Medivo%20logo/cert-iso-9001.png' },
+        { title: 'ISO 13485:2016', logo: 'assets/Medivo%20logo/cert-iso-13485.png' },
+        { title: 'CE Certified', logo: 'assets/Medivo%20logo/cert-ce.png' },
+        { title: 'COSCO Registered', logo: 'assets/Medivo%20logo/cert-cosco.png' },
+        { title: 'IEC Compliant', logo: 'assets/Medivo%20logo/cert-iec.png' }
       ],
       expertise: ['RF shielding', 'Quench pipe systems', 'Mechanical installation', 'Equipment unloading', 'Passive shielding'],
       approach: [
