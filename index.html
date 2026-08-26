@@ -22,6 +22,19 @@
   a { color:#0B266B; }
   a:hover { color:#0B266B; }
   *:focus-visible { outline:2px solid #0B266B; outline-offset:2px; }
+  .hero-stats-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
+  .hero-stat-item { display:flex; align-items:center; gap:12px; border-left:1px solid rgba(255,255,255,.15); padding-left:20px; }
+  .hero-stat-item:first-child { border-left:none; padding-left:0; }
+  @media (max-width:900px) {
+    .hero-stats-grid { grid-template-columns:repeat(2,1fr); row-gap:20px; }
+    .hero-stat-item { border-left:none !important; padding-left:0 !important; border-top:1px solid rgba(255,255,255,.15); padding-top:16px; }
+    .hero-stat-item:nth-child(-n+2) { border-top:none; padding-top:0; }
+  }
+  @media (max-width:480px) {
+    .hero-stats-grid { grid-template-columns:1fr; }
+    .hero-stat-item:nth-child(-n+2) { border-top:1px solid rgba(255,255,255,.15); padding-top:16px; }
+    .hero-stat-item:first-child { border-top:none; padding-top:0; }
+  }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Medivo Healthcare","description":"Medical imaging infrastructure and technical services: MRI RF shielding, quench pipe systems, mechanical installation, equipment unloading and passive shielding.","url":"","telephone":"8800261800","email":"info@medivohealthcare.com","address":{"@type":"PostalAddress","streetAddress":"E-49, New Roshan Pura Extension, Near Subhash Chowk, Najafgarh Extension, New Delhi – 110043"}}</script>
 </helmet>
@@ -34,7 +47,7 @@
     <div>
       <div style="display:flex;alignItems:center;gap:10px;marginBottom:22px">
         <span style="width:20px;height:2px;background:#00A87E;display:block"></span>
-        <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;fontWeight:700;letterSpacing:0.18em;textTransform:uppercase;color:rgba(255,255,255,0.85)">Welcome to <span style="color:#00A87E">Medivo Healthcare</span></span>
+        <span style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;fontSize:16px;fontWeight:700;letterSpacing:0.06em;textTransform:uppercase;color:rgba(255,255,255,0.9)">Welcome to <span style="color:#00A87E">Medivo Healthcare</span></span>
       </div>
       <h1 id="hero-h" style="fontSize:clamp(36px,4.6vw,58px);lineHeight:1.1;letterSpacing:-0.02em;fontWeight:800;margin:0;color:#fff">Innovating<br/><span style="color:#00A87E">Better Care</span></h1>
       <p style="fontSize:clamp(15.5px,1.15vw,17px);lineHeight:1.7;color:rgba(255,255,255,0.8);marginTop:22px;maxWidth:50ch;textWrap:pretty">Delivering advanced technology, trusted products and end-to-end solutions that empower healthcare providers and improve patient outcomes.</p>
@@ -55,24 +68,24 @@
   </div>
 
   <div style="position:relative;borderTop:1px solid rgba(255,255,255,0.15)">
-    <div style="maxWidth:1300px;margin:0 auto;padding:clamp(22px,3vw,32px) clamp(16px,3vw,40px);display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:20px">
-      <div style="display:flex;alignItems:center;gap:12px">
+    <div class="hero-stats-grid" style="maxWidth:1300px;margin:0 auto;padding:clamp(22px,3vw,32px) clamp(16px,3vw,40px)">
+      <div class="hero-stat-item">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 21v-6h6v6"></path><path d="M9 9h1"></path><path d="M14 9h1"></path><path d="M9 13h1"></path><path d="M14 13h1"></path></svg>
         <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">500+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Hospitals Served</div></div>
       </div>
-      <div style="display:flex;alignItems:center;gap:12px;borderLeft:1px solid rgba(255,255,255,0.15);paddingLeft:20px">
+      <div class="hero-stat-item">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><path d="M21 8 12 3 3 8v8l9 5 9-5Z"></path><path d="M3 8l9 5 9-5"></path><path d="M12 13v8"></path></svg>
         <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">1000+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Projects Delivered</div></div>
       </div>
-      <div style="display:flex;alignItems:center;gap:12px;borderLeft:1px solid rgba(255,255,255,0.15);paddingLeft:20px">
+      <div class="hero-stat-item">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-3.9 3.6-7 8-7s8 3.1 8 7"></path></svg>
         <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">50+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Partners &amp; Vendors</div></div>
       </div>
-      <div style="display:flex;alignItems:center;gap:12px;borderLeft:1px solid rgba(255,255,255,0.15);paddingLeft:20px">
+      <div class="hero-stat-item">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
         <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">25+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Years of Experience</div></div>
       </div>
-      <div style="display:flex;alignItems:center;gap:12px;borderLeft:1px solid rgba(255,255,255,0.15);paddingLeft:20px">
+      <div class="hero-stat-item">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2Z"></path><path d="M3 19a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2Z"></path></svg>
         <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">24/7</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Support Available</div></div>
       </div>
@@ -211,8 +224,16 @@
 
 <section aria-labelledby="imaging-h" style="padding:clamp(48px,6vw,80px) clamp(16px,3vw,40px)">
   <div style="maxWidth:1280px;margin:0 auto">
-    <h2 id="imaging-h" style="fontSize:clamp(20px,2.2vw,26px);fontWeight:800;letterSpacing:-0.015em;margin:0;color:#0B266B">Our Imaging Solutions</h2>
-    <span style="width:36px;height:3px;background:#00A87E;display:block;marginTop:10px"></span>
+    <div style="display:flex;alignItems:flex-start;justifyContent:space-between;flexWrap:wrap;gap:12px">
+      <div>
+        <h2 id="imaging-h" style="fontSize:clamp(20px,2.2vw,26px);fontWeight:800;letterSpacing:-0.015em;margin:0;color:#0B266B">Our Imaging Solutions</h2>
+        <span style="width:36px;height:3px;background:#00A87E;display:block;marginTop:10px"></span>
+      </div>
+      <a href="Services.dc.html" style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;fontWeight:700;letterSpacing:0.12em;textTransform:uppercase;color:#00A87E;textDecoration:none;display:inline-flex;alignItems:center;gap:6px" style-hover="color:#0B266B">
+        View All Services
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+    </div>
     <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:22px;marginTop:32px">
       <div>
         <div style="aspectRatio:4/3;overflow:hidden;borderRadius:10px;background:#EDF0F3">
@@ -315,7 +336,7 @@
           <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;color:#0B266B">{{ s.num }}</span>
           <h3 style="fontSize:19px;fontWeight:700;lineHeight:1.25;margin:16px 0 0">{{ s.title }}</h3>
           <p style="fontSize:14.5px;lineHeight:1.65;color:#5C6B78;margin:12px 0 0;flexGrow:1">{{ s.desc }}</p>
-          <span style="fontSize:13.5px;fontWeight:700;color:#0B266B;marginTop:22px">{{ s.cta }}</span>
+          <span style="fontSize:13.5px;fontWeight:700;color:#00A87E;marginTop:22px">{{ s.cta }}</span>
         </a>
       </sc-for>
       <div style="background:#0B266B;color:#fff;padding:28px;display:flex;flexDirection:column;justifyContent:center">
