@@ -112,7 +112,7 @@
       <div style="marginTop:24px;borderTop:1px solid #E2E7EC">
         <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
           <div style="borderBottom:1px solid #E2E7EC">
-            <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.isOpen }}" style="width:100%;background:none;border:none;padding:18px 0;display:flex;gap:16px;alignItems:center;textAlign:left;cursor:pointer;fontFamily:inherit">
+            <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.isOpen }}" style="width:100%;background:none;border:none;padding:18px 0;display:flex;gap:16px;alignItems:center;textAlign:left;cursor:pointer;fontFamily:inherit" style-hover="background:#F5F7FA">
               <span style="fontSize:15.5px;fontWeight:700;color:#0B266B;flexGrow:1">{{ f.q }}</span>
               <span style="fontSize:19px;color:#8A98A5">{{ f.sign }}</span>
             </button>
