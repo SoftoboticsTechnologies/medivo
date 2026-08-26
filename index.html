@@ -48,11 +48,9 @@
         </a>
       </div>
     </div>
-    <div style="position:relative;width:100%;aspectRatio:4/3;filter:drop-shadow(0 30px 50px rgba(0,0,0,0.45))">
-      <div style="position:relative;width:100%;height:100%;clipPath:polygon(0 0,100% 0,100% 100%,14% 100%,0 78%);overflow:hidden">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Scan_MRI.jpg?width=1000" alt="MRI scanner inside a shielded magnet room" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;objectFit:cover;display:block" />
-        <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,38,107,0.35) 0%,rgba(11,38,107,0) 30%)"></div>
-      </div>
+    <div style="position:relative;width:100%;aspectRatio:4/3;borderRadius:16px;overflow:hidden;boxShadow:0 30px 60px -20px rgba(0,0,0,0.45)">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Scan_MRI.jpg?width=1000" alt="MRI scanner inside a shielded magnet room" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;objectFit:cover;display:block" />
+      <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,38,107,0.35) 0%,rgba(11,38,107,0) 30%)"></div>
     </div>
   </div>
 
@@ -260,8 +258,8 @@
 <section aria-labelledby="essence-h" style="padding:clamp(48px,6vw,80px) clamp(16px,3vw,40px);background:#F4F6F8;borderTop:1px solid #E2E7EC;borderBottom:1px solid #E2E7EC">
   <div style="maxWidth:1280px;margin:0 auto">
     <div style="textAlign:center">
-      <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;fontWeight:700;letterSpacing:0.2em;textTransform:uppercase;color:#00A87E">Why Choose Medivo</span>
-      <h2 id="essence-h" style="fontSize:clamp(22px,2.6vw,30px);letterSpacing:-0.02em;fontWeight:800;margin:10px 0 0;color:#0B266B">Our Commitment to Excellence</h2>
+      <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;fontWeight:700;letterSpacing:0.2em;textTransform:uppercase;color:#00A87E">Our Commitment to Excellence</span>
+      <h2 id="essence-h" style="fontSize:clamp(22px,2.6vw,30px);letterSpacing:-0.02em;fontWeight:800;margin:10px 0 0;color:#0B266B">Why Choose Medivo Healthcare?</h2>
     </div>
     <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:1px;marginTop:36px;background:#E2E7EC;border:1px solid #E2E7EC">
       <div style="background:#fff;padding:28px 20px;textAlign:center">
@@ -332,48 +330,6 @@
   </div>
 </section>
 
-<section aria-labelledby="why-h" style="padding:clamp(56px,7vw,104px) clamp(16px,3vw,40px)">
-  <div style="maxWidth:1280px;margin:0 auto">
-    <h2 id="why-h" style="fontSize:clamp(26px,3.2vw,40px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:24ch">Why Choose Medivo Healthcare?</h2>
-    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:1px;marginTop:40px;background:#E2E7EC;border:1px solid #E2E7EC">
-      <sc-for list="{{ why }}" as="w" hint-placeholder-count="4">
-        <div style="background:#fff;padding:30px 26px">
-          <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:22px;fontWeight:500;color:#E1E6EB">{{ w.num }}</span>
-          <h3 style="fontSize:17.5px;fontWeight:700;margin:14px 0 0">{{ w.title }}</h3>
-          <p style="fontSize:14.5px;lineHeight:1.65;color:#5C6B78;margin:12px 0 0">{{ w.desc }}</p>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="proc-h" style="padding:clamp(56px,7vw,104px) clamp(16px,3vw,40px);background:#0B266B;color:#fff">
-  <div style="maxWidth:1280px;margin:0 auto">
-    <div style="display:flex;flexWrap:wrap;gap:24px;alignItems:flex-end;justifyContent:space-between">
-      <div>
-        <div style="display:flex;alignItems:center;gap:12px;marginBottom:20px">
-          <span style="width:28px;height:1px;background:#0B266B;display:block"></span>
-          <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:#0B266B">Our Process</span>
-        </div>
-        <h2 id="proc-h" style="fontSize:clamp(26px,3.2vw,40px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:26ch">From Site Assessment to Project Handover</h2>
-      </div>
-      <a href="Process.dc.html" style="fontSize:14px;fontWeight:600;color:#fff;textDecoration:none;borderBottom:1px solid #0B266B;paddingBottom:4px">Full project lifecycle →</a>
-    </div>
-    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:1px;marginTop:48px;background:#0B266B;border:1px solid #0B266B">
-      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="6">
-        <div style="background:#0B266B;padding:26px 22px 30px">
-          <div style="display:flex;alignItems:center;gap:10px">
-            <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.14em;color:#0B266B">{{ st.num }}</span>
-            <span style="flexGrow:1;height:1px;background:#0B266B;display:block"></span>
-          </div>
-          <h3 style="fontSize:16px;fontWeight:700;margin:18px 0 0">{{ st.title }}</h3>
-          <p style="fontSize:13.5px;lineHeight:1.6;color:rgba(255,255,255,0.75);margin:10px 0 0">{{ st.desc }}</p>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-</section>
-
 <section aria-labelledby="ind-h" style="padding:clamp(56px,7vw,104px) clamp(16px,3vw,40px)">
   <div style="maxWidth:1280px;margin:0 auto">
     <h2 id="ind-h" style="fontSize:clamp(26px,3.2vw,40px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:24ch">Supporting Healthcare &amp; Imaging Facilities</h2>
@@ -414,32 +370,6 @@
     <div style="display:flex;flexWrap:wrap;gap:16px;alignItems:center;marginTop:36px">
       <a href="Projects.dc.html" style="background:#00A87E;color:#fff;fontSize:14.5px;fontWeight:600;padding:15px 24px;textDecoration:none" style-hover="background:#00A87E">View All Projects</a>
       <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.1em;textTransform:uppercase;color:#7B8894">Project records to be supplied by Medivo Healthcare</span>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="safe-h" style="padding:clamp(56px,7vw,104px) clamp(16px,3vw,40px)">
-  <div style="maxWidth:1280px;margin:0 auto;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(32px,5vw,72px)">
-    <div>
-      <div style="display:flex;alignItems:center;gap:12px;marginBottom:20px">
-        <span style="width:28px;height:1px;background:#0B266B;display:block"></span>
-        <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.2em;textTransform:uppercase;color:#0B266B">Safety &amp; Quality</span>
-      </div>
-      <h2 id="safe-h" style="fontSize:clamp(26px,3.2vw,40px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:22ch">Safety and Quality at Every Stage</h2>
-      <p style="fontSize:16.5px;lineHeight:1.7;color:#4A5A68;marginTop:20px;maxWidth:52ch;textWrap:pretty">Work is planned around the site, the equipment, and the people using the facility. Each stage is prepared, carried out and checked before handover.</p>
-      <div style="border:1px solid #E2E7EC;padding:22px;marginTop:30px;background:#F4F6F8">
-        <h3 style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.16em;textTransform:uppercase;fontWeight:500;margin:0;color:#0B266B">Certifications &amp; Standards</h3>
-        <p style="fontSize:13.5px;color:#5C6B78;margin:10px 0 0">[DETAILS TO BE PROVIDED BY MEDIVO HEALTHCARE]</p>
-      </div>
-      <a href="Safety-Quality.dc.html" style="display:inline-block;marginTop:28px;fontSize:14.5px;fontWeight:700;color:#0B266B;textDecoration:none;borderBottom:2px solid #0B266B;paddingBottom:4px">Safety &amp; quality approach →</a>
-    </div>
-    <div style="display:grid;gap:1px;background:#E2E7EC;border:1px solid #E2E7EC;alignContent:start">
-      <sc-for list="{{ safety }}" as="s" hint-placeholder-count="8">
-        <div style="background:#fff;padding:16px 20px;display:flex;alignItems:center;gap:14px">
-          <span style="width:7px;height:7px;background:#0B266B;display:block;flexShrink:0"></span>
-          <span style="fontSize:14.5px;fontWeight:600;color:#2A3B49">{{ s }}</span>
-        </div>
-      </sc-for>
     </div>
   </div>
 </section>
@@ -528,36 +458,36 @@
       <p style="fontSize:11.5px;color:#5C6B78;margin:4px 0 16px">Committed to the highest global standards</p>
       <div style="display:flex;gap:14px;flexWrap:wrap">
         <div style="textAlign:center">
-          <span style="width:38px;height:38px;border:1.5px solid #00A87E;borderRadius:50%;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/medivo-icon.png" alt="Medivo" style="width:22px;height:22px;objectFit:contain;display:block" />
+          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
+            <img src="assets/Medivo%20logo/cert-iso-9001.png" alt="ISO 9001:2015" style="width:100%;height:100%;objectFit:contain;display:block" />
           </span>
           <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">ISO</span>
           <span style="display:block;fontSize:9.5px;color:#5C6B78">9001:2015</span>
         </div>
         <div style="textAlign:center">
-          <span style="width:38px;height:38px;border:1.5px solid #00A87E;borderRadius:50%;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/medivo-icon.png" alt="Medivo" style="width:22px;height:22px;objectFit:contain;display:block" />
+          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
+            <img src="assets/Medivo%20logo/cert-iso-13485.png" alt="ISO 13485:2016" style="width:100%;height:100%;objectFit:contain;display:block" />
           </span>
           <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">ISO</span>
           <span style="display:block;fontSize:9.5px;color:#5C6B78">13485:2016</span>
         </div>
         <div style="textAlign:center">
-          <span style="width:38px;height:38px;border:1.5px solid #00A87E;borderRadius:50%;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/medivo-icon.png" alt="Medivo" style="width:22px;height:22px;objectFit:contain;display:block" />
+          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
+            <img src="assets/Medivo%20logo/cert-ce.png" alt="CE Certified" style="width:100%;height:100%;objectFit:contain;display:block" />
           </span>
           <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">CE</span>
           <span style="display:block;fontSize:9.5px;color:#5C6B78">Certified</span>
         </div>
         <div style="textAlign:center">
-          <span style="width:38px;height:38px;border:1.5px solid #00A87E;borderRadius:50%;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/medivo-icon.png" alt="Medivo" style="width:22px;height:22px;objectFit:contain;display:block" />
+          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
+            <img src="assets/Medivo%20logo/cert-cosco.png" alt="COSCO Registered" style="width:100%;height:100%;objectFit:contain;display:block" />
           </span>
-          <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">CSCO</span>
+          <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">COSCO</span>
           <span style="display:block;fontSize:9.5px;color:#5C6B78">Registered</span>
         </div>
         <div style="textAlign:center">
-          <span style="width:38px;height:38px;border:1.5px solid #00A87E;borderRadius:50%;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/medivo-icon.png" alt="Medivo" style="width:22px;height:22px;objectFit:contain;display:block" />
+          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
+            <img src="assets/Medivo%20logo/cert-iec.png" alt="IEC Compliant" style="width:100%;height:100%;objectFit:contain;display:block" />
           </span>
           <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">IEC</span>
           <span style="display:block;fontSize:9.5px;color:#5C6B78">Compliant</span>
@@ -593,20 +523,6 @@ class Component extends DCLogic {
         { num: '04', title: 'Unloading Services', desc: 'Unloading and placement of MRI, CT, and other imaging systems, using equipment and trained handling to avoid damage during the process.', cta: 'Explore Unloading Services →', href: 'Unloading.dc.html' },
         { num: '05', title: 'Passive Shielding Solutions', desc: 'Passive shielding to support MRI and imaging room requirements, with solutions adapted to the specific facility.', cta: 'Explore Passive Shielding →', href: 'Passive-Shielding.dc.html' }
       ],
-      why: [
-        { num: '01', title: 'Technical Expertise', desc: 'Focused understanding of RF shielding, quench venting, and mechanical installation requirements for medical imaging environments.' },
-        { num: '02', title: 'Attention to Quality', desc: 'Materials and installation practices selected with durability and safety in mind.' },
-        { num: '03', title: 'Client Specific Approach', desc: 'Solutions adapted to the layout, equipment, and requirements of each facility.' },
-        { num: '04', title: 'Reliable, Efficient Execution', desc: 'Project timelines planned to reduce downtime and disruption to facility operations.' }
-      ],
-      steps: [
-        { num: '01', title: 'Site Assessment', desc: 'Understand the site, equipment, and project requirements.' },
-        { num: '02', title: 'Technical Planning', desc: 'Define the installation and infrastructure approach.' },
-        { num: '03', title: 'Preparation', desc: 'Prepare materials, equipment, and site requirements.' },
-        { num: '04', title: 'Execution', desc: 'Carry out installation, handling, dismantling, or technical work.' },
-        { num: '05', title: 'Inspection', desc: 'Review completed work and perform applicable checks.' },
-        { num: '06', title: 'Handover', desc: 'Complete the project and provide required project documentation.' }
-      ],
       industries: [
         { title: 'Hospitals', desc: 'MRI, CT, and imaging infrastructure support.' },
         { title: 'Diagnostic Centres', desc: 'Technical infrastructure and equipment handling support.' },
@@ -620,7 +536,6 @@ class Component extends DCLogic {
         { service: 'Quench Pipe', title: '[PROJECT NAME]', location: '[LOCATION]', equipment: '[EQUIPMENT]', desc: '[PROJECT DESCRIPTION TO BE PROVIDED BY MEDIVO HEALTHCARE]', imageNote: 'reference photo — wikimedia commons', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI-tomograph.jpg?width=1000', alt: 'MRI magnet and room services' },
         { service: 'Unloading', title: '[PROJECT NAME]', location: '[LOCATION]', equipment: '[EQUIPMENT]', desc: '[PROJECT DESCRIPTION TO BE PROVIDED BY MEDIVO HEALTHCARE]', imageNote: 'reference photo — wikimedia commons', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/US_Navy_111005-O-KK908-128_An_Antonov_124-100M_cargo_aircraft_delivers_an_MRI_machine_to_the_Role_3_Medical_Facility_at_Camp_Bastion.jpg?width=1000', alt: 'MRI system being unloaded on site' }
       ],
-      safety: ['Site preparation', 'Controlled equipment handling', 'Technical planning', 'Installation quality', 'Inspection', 'Project documentation', 'Communication with facility teams', 'Minimizing operational disruption'],
       capabilities: [
         { title: 'RF Shielding', desc: 'Continuous shielded enclosures for MRI rooms.', note: 'reference photo — wikimedia commons', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Scan_MRI.jpg?width=1000', alt: 'Shielded MRI scan room' },
         { title: 'Quench Venting', desc: 'Vent routing for helium discharge during a quench.', note: 'reference photo — wikimedia commons', img: 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI-tomograph.jpg?width=1000', alt: 'MRI magnet with connected services' },
