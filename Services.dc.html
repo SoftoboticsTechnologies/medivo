@@ -44,12 +44,12 @@
           <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.16em;color:#0B266B">{{ s.num }}</span>
           <h2 style="fontSize:clamp(21px,2.2vw,27px);fontWeight:800;letterSpacing:-0.015em;lineHeight:1.2;margin:14px 0 0">{{ s.title }}</h2>
           <p style="fontSize:15.5px;lineHeight:1.7;color:#4A5A68;margin:16px 0 0;maxWidth:52ch;textWrap:pretty">{{ s.desc }}</p>
-          <a href="{{ s.href }}" style="display:inline-block;marginTop:24px;fontSize:14.5px;fontWeight:700;color:#0B266B;textDecoration:none;borderBottom:2px solid #0B266B;paddingBottom:4px">{{ s.cta }}</a>
+          <a href="{{ s.href }}" style="display:inline-block;marginTop:24px;fontSize:14.5px;fontWeight:700;color:#00A87E;textDecoration:none;borderBottom:2px solid #00A87E;paddingBottom:4px">{{ s.cta }}</a>
         </div>
         <div style="display:grid;gap:1px;background:#E2E7EC;border:1px solid #E2E7EC">
           <sc-for list="{{ s.points }}" as="pt" hint-placeholder-count="3">
             <div style="background:#F7F9FB;padding:14px 18px;display:flex;gap:12px;alignItems:center">
-              <span style="width:6px;height:6px;background:#0B266B;display:block;flexShrink:0"></span>
+              <span style="width:6px;height:6px;background:#00A87E;display:block;flexShrink:0"></span>
               <span style="fontSize:14px;fontWeight:600;color:#2A3B49">{{ pt }}</span>
             </div>
           </sc-for>
@@ -73,7 +73,7 @@
   <div style="maxWidth:1280px;margin:0 auto;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:36px;alignItems:center">
     <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0;maxWidth:22ch">Not sure which service your project needs?</h2>
     <div style="display:flex;flexWrap:wrap;gap:14px">
-      <a href="Contact.dc.html" style="background:#0B266B;color:#fff;fontSize:15px;fontWeight:700;padding:17px 28px;textDecoration:none;border:1px solid #0B266B" style-hover="background:#fff;color:#0B266B;borderColor:#fff">Request a Quote</a>
+      <a href="Contact.dc.html" style="background:#00A87E;color:#fff;fontSize:15px;fontWeight:700;padding:17px 28px;textDecoration:none;border:1px solid #00A87E" style-hover="background:#fff;color:#00A87E;borderColor:#fff">Request a Quote</a>
       <a href="Process.dc.html" style="border:1px solid rgba(255,255,255,0.35);color:#fff;fontSize:15px;fontWeight:600;padding:17px 28px;textDecoration:none" style-hover="borderColor:#fff">See Our Process</a>
     </div>
   </div>
