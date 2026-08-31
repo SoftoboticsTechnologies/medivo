@@ -9,10 +9,10 @@
 <body>
 <x-dc>
 <helmet>
-<title>Our Process — Site Assessment to Handover | Medivo Healthcare</title>
-<meta name="description" content="How a Medivo Healthcare project runs: requirement discussion, site assessment, technical planning, quotation, preparation, installation, inspection and handover." />
+<title>Our Process — Requirement to Handover | Medivo Healthcare</title>
+<meta name="description" content="How a Medivo Healthcare order or project runs: requirement discussion, site or facility assessment, product/technical recommendation, quotation, sourcing, delivery or execution, inspection and handover." />
 <meta property="og:title" content="Our Process | Medivo Healthcare" />
-<meta property="og:description" content="The full project lifecycle for medical imaging infrastructure work, from first discussion to handover." />
+<meta property="og:description" content="The full order and project lifecycle for medical equipment supply and technical services, from first discussion to handover." />
 <link rel="canonical" href="Process.dc.html" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
@@ -31,8 +31,8 @@
     <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:rgba(255,255,255,0.72);display:flex;gap:10px;marginBottom:30px">
       <a href="index.html" style="color:rgba(255,255,255,0.72);textDecoration:none">Home</a><span>/</span><span style="color:#fff">Our Process</span>
     </nav>
-    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:22ch">From Site Assessment to Project Handover</h1>
-    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:rgba(255,255,255,0.88);marginTop:22px;maxWidth:60ch;textWrap:pretty">Eight stages describe how a project runs, from the first discussion of a requirement through to the documentation issued at handover.</p>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:22ch">From Requirement to Handover</h1>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:rgba(255,255,255,0.88);marginTop:22px;maxWidth:60ch;textWrap:pretty">Eight stages describe how an equipment order or technical service project runs, from the first discussion of a requirement through to the documentation issued at handover.</p>
   </div>
 </section>
 
@@ -74,14 +74,14 @@ class Component extends DCLogic {
   renderVals() {
     return {
       stages: [
-        { num: '01', title: 'Requirement Discussion', desc: 'The starting point is what the facility needs: the equipment involved, the room, the stage the project is at, and the timeline being worked to.', output: 'Output — scope understood in outline' },
-        { num: '02', title: 'Site Assessment', desc: 'The site is reviewed in person where possible: room dimensions and structure, access routes, existing services, floor conditions and anything that constrains the work.', output: 'Output — site conditions recorded' },
-        { num: '03', title: 'Technical Planning', desc: 'The technical approach is defined against the equipment requirement, covering method, sequence, materials, penetrations and coordination with other trades on site.', output: 'Output — installation approach defined' },
-        { num: '04', title: 'Quotation', desc: 'Scope, inclusions and exclusions are set out so the facility can see what is covered before the project is committed.', output: 'Output — written quotation issued' },
-        { num: '05', title: 'Preparation', desc: 'Materials, equipment and site requirements are prepared, and working windows and access arrangements are confirmed with the facility.', output: 'Output — site and materials ready' },
-        { num: '06', title: 'Installation / Execution', desc: 'The work is carried out: shielding, quench venting, mechanical installation, unloading or dismantling, according to the agreed method and sequence.', output: 'Output — work carried out on site' },
-        { num: '07', title: 'Inspection', desc: 'Completed work is reviewed and applicable checks are performed before the area is released back to the facility.', output: 'Output — checks completed and recorded' },
-        { num: '08', title: 'Handover', desc: 'The project is closed out with the facility and the required project documentation is issued.', output: 'Output — documentation issued' }
+        { num: '01', title: 'Requirement Discussion', desc: 'The starting point is what the facility needs: the equipment or product involved, the department, the project stage and the timeline being worked to.', output: 'Output — requirement understood in outline' },
+        { num: '02', title: 'Site / Facility Assessment', desc: 'Where relevant, the site is reviewed: room dimensions, access routes, existing equipment and anything that affects product selection or technical service delivery.', output: 'Output — site conditions recorded' },
+        { num: '03', title: 'Product & Technical Recommendation', desc: 'Products are matched to applicable safety classification, intended use and manufacturer specifications, and the technical approach for any service scope is defined.', output: 'Output — recommendation defined' },
+        { num: '04', title: 'Quotation', desc: 'Scope, inclusions and exclusions are set out so the facility can see what is covered before the order or project is committed.', output: 'Output — written quotation issued' },
+        { num: '05', title: 'Order Confirmation & Sourcing', desc: 'Once confirmed, products are sourced from qualified manufacturers and suppliers, and any technical service work is scheduled with the facility.', output: 'Output — order confirmed, sourcing underway' },
+        { num: '06', title: 'Delivery / Execution', desc: 'Products are delivered, and any technical service — installation, unloading, handling, shifting, relocation or dismantling — is carried out according to the agreed plan.', output: 'Output — delivery or work carried out' },
+        { num: '07', title: 'Inspection', desc: 'Delivered products and completed work are reviewed and applicable checks are performed before handover to the facility.', output: 'Output — checks completed and recorded' },
+        { num: '08', title: 'Handover', desc: 'The order or project is closed out with the facility and the required documentation is issued.', output: 'Output — documentation issued' }
       ]
     };
   }

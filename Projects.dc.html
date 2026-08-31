@@ -9,10 +9,10 @@
 <body>
 <x-dc>
 <helmet>
-<title>Projects — MRI RF Shielding, Quench Pipe &amp; Installation Work | Medivo Healthcare</title>
-<meta name="description" content="Medical imaging infrastructure projects by Medivo Healthcare: RF shielding, quench pipe, mechanical installation, dismantling, unloading and passive shielding work." />
+<title>Projects — MRI, CT/PET-CT, Cath-Lab &amp; Technical Service Work | Medivo Healthcare</title>
+<meta name="description" content="Medical equipment and technical service projects by Medivo Healthcare: MRI solutions, CT &amp; PET-CT solutions, Cath-Lab solutions, medical imaging &amp; oncology solutions, and technical &amp; project services." />
 <meta property="og:title" content="Projects | Medivo Healthcare" />
-<meta property="og:description" content="A closer look at medical imaging infrastructure and technical projects." />
+<meta property="og:description" content="A closer look at our medical equipment supply and technical service projects." />
 <link rel="canonical" href="Projects.dc.html" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
@@ -32,7 +32,7 @@
       <a href="index.html" style="color:rgba(255,255,255,0.72);textDecoration:none">Home</a><span>/</span><span style="color:#fff">Projects</span>
     </nav>
     <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:20ch">Our Recent Work</h1>
-    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:rgba(255,255,255,0.88);marginTop:22px;maxWidth:60ch;textWrap:pretty">A closer look at our medical imaging infrastructure and technical projects. Only verified project records are published here.</p>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:rgba(255,255,255,0.88);marginTop:22px;maxWidth:60ch;textWrap:pretty">A closer look at our medical equipment supply and technical service projects. Only verified project records are published here.</p>
   </div>
 </section>
 
@@ -100,8 +100,8 @@
 class Component extends DCLogic {
   state = { filter: 'All' };
   renderVals() {
-    const cats = ['All', 'RF Shielding', 'Quench Pipe', 'Installation', 'Dismantling', 'Unloading', 'Passive Shielding'];
-    const all = ['RF Shielding', 'Quench Pipe', 'Installation', 'Dismantling', 'Unloading', 'Passive Shielding'].map((c, i) => ({
+    const cats = ['All', 'MRI Solutions', 'CT & PET-CT', 'Cath-Lab', 'Imaging & Oncology', 'Technical Services'];
+    const all = ['MRI Solutions', 'CT & PET-CT', 'Cath-Lab', 'Imaging & Oncology', 'Technical Services'].map((c, i) => ({
       service: c,
       cat: c,
       title: '[PROJECT NAME]',
@@ -111,8 +111,8 @@ class Component extends DCLogic {
       desc: '[PROJECT DESCRIPTION TO BE PROVIDED BY MEDIVO HEALTHCARE]',
       highlights: 'Technical highlights — [TO BE PROVIDED]',
       imageNote: 'reference photo — wikimedia commons',
-      img: ['https://commons.wikimedia.org/wiki/Special:FilePath/Modern_3T_MRI.JPG?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI-tomograph.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI_installation.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI_Scanner_Mark_One.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/US_Navy_111005-O-KK908-128_An_Antonov_124-100M_cargo_aircraft_delivers_an_MRI_machine_to_the_Role_3_Medical_Facility_at_Camp_Bastion.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/An_MRI_scanner.JPG?width=1000'][i],
-      alt: ['MRI room with RF shielded enclosure', 'MRI magnet and room services', 'Imaging system being installed', 'MRI scanner unit', 'MRI system being unloaded on site', 'MRI scanner in an imaging room'][i]
+      img: ['https://commons.wikimedia.org/wiki/Special:FilePath/Modern_3T_MRI.JPG?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI-tomograph.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/Mobile_X-ray_image_intensifier.JPG?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/Alaris%20Medsystem%20III%20infusion%20pump%20120815-F-TR874-003.jpg?width=1000', 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI_installation.jpg?width=1000'][i],
+      alt: ['MRI patient-care equipment in an MRI room', 'CT scanner and injector system', 'Cath-Lab interventional imaging equipment', 'Medical-grade patient monitoring equipment', 'Medical equipment being installed on site'][i]
     }));
     const visible = this.state.filter === 'All' ? all : all.filter(p => p.cat === this.state.filter);
     return {

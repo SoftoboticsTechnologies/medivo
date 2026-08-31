@@ -9,10 +9,10 @@
 <body>
 <x-dc>
 <helmet>
-<title>FAQ — MRI RF Cages, Quench Pipes &amp; Imaging Installation | Medivo Healthcare</title>
-<meta name="description" content="Answers on MRI RF cages, RF shielding requirements, quench pipes, RF cage repair, equipment unloading, dismantling, passive shielding and how to request a quotation from Medivo Healthcare." />
+<title>FAQ — MRI, CT/PET-CT, Cath-Lab Equipment &amp; Technical Services | Medivo Healthcare</title>
+<meta name="description" content="Answers on MRI equipment and accessories, CT and PET-CT solutions, Cath-Lab solutions, medical imaging and oncology solutions, technical and project services, and how to request a quotation from Medivo Healthcare." />
 <meta property="og:title" content="Frequently Asked Questions | Medivo Healthcare" />
-<meta property="og:description" content="Technical answers on RF shielding, quench venting, installation and equipment handling." />
+<meta property="og:description" content="Answers on our product range and technical services, and how to work with Medivo Healthcare." />
 <link rel="canonical" href="FAQ.dc.html" />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
@@ -21,7 +21,7 @@
   a:hover { color:#0B266B; }
   *:focus-visible { outline:2px solid #0B266B; outline-offset:2px; }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an MRI RF cage?","acceptedAnswer":{"@type":"Answer","text":"An RF cage is a shielded enclosure around an MRI room, forming a continuous conductive barrier across walls, floor, ceiling, door and penetrations so external radiofrequency energy stays out of the scan environment."}},{"@type":"Question","name":"Why is RF shielding required for MRI rooms?","acceptedAnswer":{"@type":"Answer","text":"MRI relies on very low level radiofrequency signals. Nearby transmitters and building systems produce electromagnetic interference that appears as image artefacts, so shielding maintains a controlled imaging environment."}},{"@type":"Question","name":"What is an MRI quench pipe?","acceptedAnswer":{"@type":"Answer","text":"A quench pipe is the vent line that carries helium gas out of the magnet room during a quench event, so gas is discharged safely outside the building rather than into the occupied space."}},{"@type":"Question","name":"Do you repair existing RF cages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides RF cage maintenance and repair services."}},{"@type":"Question","name":"Do you provide MRI equipment unloading?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides unloading and placement services for MRI, CT and other imaging equipment."}},{"@type":"Question","name":"Do you provide equipment dismantling?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides mechanical dismantling and relocation support."}},{"@type":"Question","name":"Do you provide passive shielding?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides passive shielding solutions based on project requirements."}},{"@type":"Question","name":"How can I request a quotation?","acceptedAnswer":{"@type":"Answer","text":"Contact Medivo by phone, email, WhatsApp or through the website enquiry form."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What products does Medivo Healthcare supply?","acceptedAnswer":{"@type":"Answer","text":"Medivo supplies medical equipment, imaging accessories, consumables and technical services for MRI, CT, PET-CT, Cath-Lab, medical imaging and oncology environments."}},{"@type":"Question","name":"How is MRI equipment selected for safety?","acceptedAnswer":{"@type":"Answer","text":"Products intended for use in MRI environments are selected based on their applicable safety classification, intended use and manufacturer specifications."}},{"@type":"Question","name":"Do you supply CT and PET-CT injector consumables?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo supplies CT and PET-CT injectors along with injector consumables such as syringes, patient sets and contrast-media administration accessories."}},{"@type":"Question","name":"Do you supply Cath-Lab accessories and consumables?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo supplies Cath-Lab accessories, patient-care equipment, procedure-related accessories and consumables."}},{"@type":"Question","name":"Do you provide installation support?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides professional installation support for medical equipment, coordinated according to project requirements and applicable OEM/site specifications."}},{"@type":"Question","name":"Do you provide equipment unloading and dismantling?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medivo provides unloading and handling, equipment shifting and relocation, and dismantling support for medical equipment."}},{"@type":"Question","name":"How can I request a quotation?","acceptedAnswer":{"@type":"Answer","text":"Contact Medivo by phone, email, WhatsApp or through the website enquiry form."}}]}</script>
 </helmet>
 
 <div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B266B;background:#fff">
@@ -33,7 +33,7 @@
       <a href="index.html" style="color:rgba(255,255,255,0.72);textDecoration:none">Home</a><span>/</span><span style="color:#fff">FAQ</span>
     </nav>
     <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:20ch">Frequently Asked Questions</h1>
-    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:rgba(255,255,255,0.88);marginTop:22px;maxWidth:58ch;textWrap:pretty">Technical background on shielding and quench venting, and practical answers on services and quotations.</p>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:rgba(255,255,255,0.88);marginTop:22px;maxWidth:58ch;textWrap:pretty">Answers on our product range across MRI, CT/PET-CT, Cath-Lab and oncology, our technical services, and how to request a quotation.</p>
   </div>
 </section>
 
@@ -74,23 +74,22 @@ class Component extends DCLogic {
   state = { open: '0-0' };
   renderVals() {
     const data = [
-      ['Technical background', [
-        ['What is an MRI RF cage?', 'An RF cage is a shielded enclosure around an MRI room. It forms a continuous conductive barrier across walls, floor, ceiling, door and penetrations so that external radiofrequency energy stays out of the scan environment and the scanner\u2019s own signals stay contained.'],
-        ['Why is RF shielding required for MRI rooms?', 'MRI imaging relies on very low level radiofrequency signals. Nearby transmitters, mobile networks, building electrical systems and other equipment produce electromagnetic interference that appears in images as artefacts or noise. Shielding maintains a controlled imaging environment so the scanner performs to specification.'],
-        ['What is an MRI quench pipe?', 'A quench pipe is the vent line that carries helium gas out of the magnet room during a quench event, when liquid helium boils off rapidly and expands into a large volume of cold gas. Its routing, sizing and sealing determine whether that gas is discharged safely outside the building rather than into the occupied space.'],
-        ['What is passive shielding?', 'Passive shielding is shielding built into the fabric around an imaging room to contain or attenuate a field. Whether it is required, and to what specification, depends on the equipment and the site.']
+      ['Our products', [
+        ['What MRI equipment and accessories do you supply?', 'MRI patient trolleys, MRI wheelchairs, MRI oxygen cylinders, MRI pulse oximeters, MRI-compatible patient monitoring equipment, and MRI patient-care, room and safety accessories, selected based on applicable safety classification and manufacturer specifications.'],
+        ['What CT and PET-CT products do you supply?', 'CT and PET-CT injectors, injector consumables, syringes, patient sets, contrast-media administration accessories, and CT & PET-CT accessories and imaging consumables.'],
+        ['What Cath-Lab products do you supply?', 'Cath-Lab accessories, medical equipment, patient-care equipment, procedure-related accessories, consumables and imaging accessories for Cath-Lab and interventional departments.'],
+        ['Do you supply products for oncology and general imaging departments?', 'Yes. The portfolio covers medical-grade monitors, patient monitoring equipment, imaging accessories, procedure-related equipment and consumables used in medical imaging and oncology environments.']
       ]],
-      ['Services', [
-        ['Do you repair existing RF cages?', 'Yes. Medivo provides RF cage maintenance and repair services, including work on existing shielding, doors, panels and penetrations.'],
-        ['Do you provide MRI equipment unloading?', 'Yes. Medivo provides unloading and placement services for MRI, CT, and other imaging equipment.'],
-        ['Do you provide equipment dismantling?', 'Yes. Medivo provides mechanical dismantling and relocation support.'],
-        ['Do you provide passive shielding?', 'Yes. Medivo provides passive shielding solutions based on project requirements.'],
-        ['Is Medivo introducing new services?', 'Medivo continues to evaluate new technologies and partnerships in medical imaging infrastructure. Confirmed new services will be added to this page when available.']
+      ['Technical services', [
+        ['Do you provide installation support?', 'Yes. Medivo provides professional installation support for medical equipment and associated systems, coordinated according to project requirements and applicable OEM/site specifications.'],
+        ['Do you provide equipment unloading and handling?', 'Yes. Medivo provides safe, professionally planned unloading, handling and movement of medical equipment.'],
+        ['Do you provide equipment shifting, relocation and dismantling?', 'Yes. Medivo provides technical support for shifting and relocation of medical equipment within healthcare facilities, along with dismantling support and coordination with OEMs and contractors.'],
+        ['Is Medivo introducing new products or services?', 'Medivo continuously expands its portfolio through partnerships with qualified manufacturers, suppliers and healthcare technology companies. Confirmed additions will be added to this page when available.']
       ]],
       ['Working with Medivo', [
-        ['How can I request a quotation?', 'Contact Medivo by phone, email, WhatsApp, or through the enquiry form on the contact page. Equipment details, site location and the project stage help the team respond usefully.'],
-        ['What happens after I enquire?', 'The requirement is discussed, a site assessment is arranged where it is needed, and a written quotation follows once the technical approach is clear. The full sequence is set out on the process page.'],
-        ['Which areas do you work in?', 'Service area is confirmed by Medivo Healthcare. [SERVICE AREA]']
+        ['How can I request a quotation?', 'Contact Medivo by phone, email, WhatsApp, or through the enquiry form on the contact page. Product or equipment details, site location and the project stage help the team respond usefully.'],
+        ['What happens after I enquire?', 'The requirement is discussed, a site or facility assessment is arranged where needed, and a written quotation follows once products or the technical approach are confirmed. The full sequence is set out on the process page.'],
+        ['Which customers do you work with?', 'Hospitals, diagnostic centres, MRI/CT/PET-CT centres, oncology centres, Cath-Labs, radiology and nuclear medicine departments, multi-specialty hospitals, medical colleges, government healthcare institutions, medical equipment companies, OEMs, system integrators and healthcare infrastructure companies.']
       ]]
     ];
     return {

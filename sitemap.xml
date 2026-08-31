@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Replace [SITE DOMAIN] with the live domain, and .dc.html with production URLs (e.g. /services/rf-cage-installation-repair) at deployment. -->
+<!-- Replace [SITE DOMAIN] with the live domain, and .dc.html with production URLs (e.g. /solutions/mri-equipment-accessories) at deployment. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>[SITE DOMAIN]/index.html</loc>
@@ -17,27 +17,27 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>[SITE DOMAIN]/RF-Cage.dc.html</loc>
+    <loc>[SITE DOMAIN]/MRI-Solutions.dc.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>[SITE DOMAIN]/Quench-Pipe.dc.html</loc>
+    <loc>[SITE DOMAIN]/CT-PET-CT-Solutions.dc.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>[SITE DOMAIN]/Mechanical-Installation.dc.html</loc>
+    <loc>[SITE DOMAIN]/Cath-Lab-Solutions.dc.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>[SITE DOMAIN]/Unloading.dc.html</loc>
+    <loc>[SITE DOMAIN]/Imaging-Oncology-Solutions.dc.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>[SITE DOMAIN]/Passive-Shielding.dc.html</loc>
+    <loc>[SITE DOMAIN]/Technical-Services.dc.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
