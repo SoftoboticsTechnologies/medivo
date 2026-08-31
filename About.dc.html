@@ -20,32 +20,46 @@
   a { color:#0B266B; }
   a:hover { color:#0B266B; }
   *:focus-visible { outline:2px solid #0B266B; outline-offset:2px; }
+  .about-intro-grid { display:grid; grid-template-columns:1fr; grid-template-areas:"heading" "image" "text"; gap:clamp(24px,4vw,40px); align-items:start; }
+  .about-intro-grid .ai-heading { grid-area:heading; }
+  .about-intro-grid .ai-image { grid-area:image; display:flex; align-items:center; justify-content:center; }
+  .about-intro-grid .ai-text { grid-area:text; }
+  @media (min-width:760px) {
+    .about-intro-grid { grid-template-columns:1fr 1fr; grid-template-areas:"heading image" "text image"; gap:clamp(32px,5vw,64px); }
+  }
 </style>
 </helmet>
 
 <div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B266B;background:#fff">
 <dc-import name="Site-Header" active="About" hint-size="100%,74px"></dc-import>
 
-<section style="position:relative;background:#0B266B;color:#fff;overflow:hidden">
+<section style="position:relative;background:#00A87E;color:#fff;overflow:hidden">
   <div style="position:relative;maxWidth:1280px;margin:0 auto;padding:clamp(36px,4vw,64px) clamp(16px,3vw,40px) clamp(48px,6vw,88px)">
     <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:rgba(255,255,255,0.72);display:flex;gap:10px;marginBottom:30px">
       <a href="index.html" style="color:rgba(255,255,255,0.72);textDecoration:none">Home</a><span>/</span><span style="color:#fff">About</span>
     </nav>
-    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:22ch">Innovating Better Healthcare</h1>
-    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:rgba(255,255,255,0.88);marginTop:22px;maxWidth:62ch;textWrap:pretty">Medivo Healthcare Private Limited is an emerging healthcare solutions company specializing in medical equipment, imaging accessories, consumables and professional technical services for hospitals, diagnostic centres, imaging centres, oncology facilities, Cath-Labs and other healthcare institutions.</p>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:22ch">About Medivo Healthcare Private Limited</h1>
+  </div>
+</section>
+
+<section style="padding:clamp(40px,5vw,64px) clamp(16px,3vw,40px);background:#F4F6F8;borderBottom:1px solid #E2E7EC">
+  <div style="maxWidth:1280px;margin:0 auto;textAlign:center">
+    <span style="display:block;fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;fontWeight:700;letterSpacing:0.2em;textTransform:uppercase;color:#0B266B;marginBottom:14px">Who We Are</span>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.75;color:#2A3B49;maxWidth:80ch;margin:0 auto;textWrap:pretty">Medivo Healthcare Private Limited is an emerging healthcare solutions company specializing in medical equipment, imaging accessories, consumables and professional technical services for hospitals, diagnostic centres, imaging centres, oncology facilities, Cath-Labs and other healthcare institutions.</p>
   </div>
 </section>
 
 <section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
-  <div style="maxWidth:1280px;margin:0 auto;display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(32px,5vw,64px);alignItems:start">
-    <div>
-      <span style="display:block;fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;fontWeight:700;letterSpacing:0.2em;textTransform:uppercase;textAlign:center;color:#0B266B">Who We Are</span>
-      <h2 style="fontSize:clamp(24px,2.8vw,34px);lineHeight:1.16;letterSpacing:-0.02em;fontWeight:800;margin:16px 0 0">A company built around imaging &amp; healthcare equipment</h2>
-      <p style="fontSize:16px;lineHeight:1.75;color:#4A5A68;marginTop:20px;textWrap:pretty">Medivo Healthcare is focused on supporting critical healthcare environments including MRI, CT, PET-CT, Cath-Lab, Medical Imaging and Oncology, with a comprehensive range of products and services designed to meet the evolving requirements of modern healthcare facilities.</p>
-      <p style="fontSize:16px;lineHeight:1.75;color:#4A5A68;marginTop:16px;textWrap:pretty">Our portfolio includes MRI patient-care equipment and accessories, CT and PET-CT accessories, injectors and consumables, Cath-Lab accessories, medical-grade monitors and other specialized medical equipment. In addition to product supply, we provide professional technical and project-support services — installation, unloading, handling, shifting, relocation and dismantling — for hospitals, diagnostic centres, imaging centres and other healthcare institutions.</p>
+  <div class="about-intro-grid" style="maxWidth:1280px;margin:0 auto">
+    <div class="ai-heading">
+      <h2 style="fontSize:clamp(24px,2.8vw,34px);lineHeight:1.16;letterSpacing:-0.02em;fontWeight:800;margin:0">A company built around imaging &amp; healthcare equipment</h2>
     </div>
-    <div style="display:flex;alignItems:center;justifyContent:center">
-      <img src="assets/Medivo%20logo/medivo-stacked.png" alt="Medivo Healthcare — Innovating Better Care" style="width:100%;maxWidth:420px;height:auto;display:block" />
+    <div class="ai-image">
+      <img src="assets/Medivo%20logo/medivo-stacked.png" alt="Medivo Healthcare — Innovating Better Healthcare" style="width:100%;maxWidth:420px;height:auto;display:block" />
+    </div>
+    <div class="ai-text">
+      <p style="fontSize:16px;lineHeight:1.75;color:#4A5A68;margin:0;textWrap:pretty">Medivo Healthcare is focused on supporting critical healthcare environments including MRI, CT, PET-CT, Cath-Lab, Medical Imaging and Oncology, with a comprehensive range of products and services designed to meet the evolving requirements of modern healthcare facilities.</p>
+      <p style="fontSize:16px;lineHeight:1.75;color:#4A5A68;marginTop:16px;textWrap:pretty">Our portfolio includes MRI patient-care equipment and accessories, CT and PET-CT accessories, injectors and consumables, Cath-Lab accessories, medical-grade monitors and other specialized medical equipment. In addition to product supply, we provide professional technical and project-support services — installation, unloading, handling, shifting, relocation and dismantling — for hospitals, diagnostic centres, imaging centres and other healthcare institutions.</p>
     </div>
   </div>
 </section>
