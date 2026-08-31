@@ -30,7 +30,7 @@
           </div>
         </sc-for>
       </nav>
-      <a href="Contact.dc.html" style="grid-column:3;justify-self:end;background:#00A87E;color:#fff;fontSize:13.5px;fontWeight:600;padding:11px 18px;textDecoration:none;whiteSpace:nowrap;border:1px solid #00A87E" style-hover="background:#fff;color:#00A87E;borderColor:#00A87E">Request a Quote</a>
+      <button type="button" onClick="{{ openQuote }}" style="grid-column:3;justify-self:end;background:#00A87E;color:#fff;fontSize:13.5px;fontWeight:600;padding:11px 18px;border:1px solid #00A87E;cursor:pointer;fontFamily:inherit;whiteSpace:nowrap" style-hover="background:#fff;color:#00A87E;borderColor:#00A87E">Request a Quote</button>
     </sc-if>
 
     <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
@@ -53,15 +53,91 @@
         <sc-for list="{{ allLinks }}" as="item" hint-placeholder-count="13">
           <a href="{{ item.href }}" style="padding:15px clamp(16px,3vw,40px);fontSize:15px;fontWeight:600;color:#0B266B;textDecoration:none;borderBottom:1px solid #EEF1F4">{{ item.label }}</a>
         </sc-for>
-        <a href="Contact.dc.html" style="margin:14px clamp(16px,3vw,40px) 20px;background:#00A87E;color:#fff;fontSize:15px;fontWeight:700;padding:16px;textAlign:center;textDecoration:none">Request a Quote</a>
+        <button type="button" onClick="{{ openQuote }}" style="margin:14px clamp(16px,3vw,40px) 20px;background:#00A87E;color:#fff;fontSize:15px;fontWeight:700;padding:16px;textAlign:center;border:none;cursor:pointer;fontFamily:inherit">Request a Quote</button>
       </nav>
     </div>
   </sc-if>
 </header>
+
+<sc-if value="{{ quoteOpen }}" hint-placeholder-val="{{ false }}">
+  <button type="button" onClick="{{ closeQuote }}" aria-label="Close request a quote dialog" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;background:rgba(11,38,107,0.6);border:none;padding:0;margin:0;cursor:pointer;zIndex:200"></button>
+  <div role="dialog" aria-modal="true" aria-label="Request a Quote" style="position:fixed;top:0;left:0;right:0;bottom:0;zIndex:201;display:flex;alignItems:center;justifyContent:center;padding:20px;pointerEvents:none;overflowY:auto">
+    <div style="pointerEvents:auto;background:#fff;maxWidth:640px;width:100%;maxHeight:92vh;overflowY:auto;position:relative;border:1px solid #E2E7EC;padding:clamp(26px,4vw,40px);fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;margin:auto">
+      <button type="button" onClick="{{ closeQuote }}" aria-label="Close" style="position:absolute;top:14px;right:14px;width:36px;height:36px;border:1px solid #DCE2E8;background:#fff;display:flex;alignItems:center;justifyContent:center;cursor:pointer;fontFamily:inherit" style-hover="borderColor:#00A87E">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B266B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+
+      <sc-if value="{{ quoteSubmitted }}" hint-placeholder-val="{{ false }}">
+        <div role="status" aria-live="polite">
+          <span style="width:34px;height:34px;border:2px solid #00A87E;display:flex;alignItems:center;justifyContent:center;color:#00A87E;fontSize:18px;fontWeight:700">✓</span>
+          <h2 style="fontSize:22px;fontWeight:800;letterSpacing:-0.015em;margin:20px 0 0;color:#0B266B">Thank you. Your enquiry has been received.</h2>
+          <p style="fontSize:14.5px;lineHeight:1.7;color:#4A5A68;margin:12px 0 0">Our team will contact you shortly. For urgent enquiries, call or WhatsApp +91 8800261800.</p>
+          <div style="display:flex;flexWrap:wrap;gap:12px;marginTop:22px">
+            <a href="{{ quoteMailtoHref }}" style="background:#00A87E;color:#fff;fontSize:14px;fontWeight:600;padding:14px 20px;textDecoration:none" style-hover="background:#33C79E">Also send by email</a>
+            <button type="button" onClick="{{ closeQuote }}" style="border:1px solid #DCE2E8;background:none;fontSize:14px;fontWeight:600;padding:14px 20px;cursor:pointer;fontFamily:inherit;color:#0B266B" style-hover="borderColor:#00A87E">Close</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ quoteFormVisible }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ quoteOnSubmit }}" noValidate="{{ true }}">
+          <span style="display:block;fontFamily:'IBM Plex Mono',monospace;fontSize:10px;letterSpacing:0.14em;textTransform:uppercase;color:#00A87E">Request a Quote</span>
+          <h2 style="fontSize:22px;fontWeight:800;letterSpacing:-0.015em;margin:10px 0 0;color:#0B266B">Tell us what you need</h2>
+          <p style="fontSize:13.5px;color:#5C6B78;margin:8px 0 0">Fields marked * are required.</p>
+
+          <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px;marginTop:22px">
+            <sc-for list="{{ quoteFields }}" as="f" hint-placeholder-count="8">
+              <div style="display:flex;flexDirection:column;gridColumn:{{ f.span }}">
+                <label for="{{ f.id }}" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10px;letterSpacing:0.14em;textTransform:uppercase;color:#5C6B78;marginBottom:7px">{{ f.label }}</label>
+
+                <sc-if value="{{ f.isText }}" hint-placeholder-val="{{ true }}">
+                  <input id="{{ f.id }}" name="{{ f.id }}" type="{{ f.type }}" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-required="{{ f.required }}" aria-invalid="{{ f.invalid }}" style="border:1px solid #DCE2E8;padding:12px 13px;fontSize:14.5px;color:#0B266B;background:#fff;width:100%;boxSizing:border-box" style-focus="borderColor:#0B266B" />
+                </sc-if>
+
+                <sc-if value="{{ f.isSelect }}" hint-placeholder-val="{{ false }}">
+                  <select id="{{ f.id }}" name="{{ f.id }}" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-required="{{ f.required }}" aria-invalid="{{ f.invalid }}" style="border:1px solid #DCE2E8;padding:12px 13px;fontSize:14.5px;color:#0B266B;background:#fff;width:100%;boxSizing:border-box" style-focus="borderColor:#0B266B">
+                    <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="6">
+                      <option value="{{ o }}">{{ o }}</option>
+                    </sc-for>
+                  </select>
+                </sc-if>
+
+                <sc-if value="{{ f.isTextarea }}" hint-placeholder-val="{{ false }}">
+                  <textarea id="{{ f.id }}" name="{{ f.id }}" rows="4" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-required="{{ f.required }}" aria-invalid="{{ f.invalid }}" style="border:1px solid #DCE2E8;padding:12px 13px;fontSize:14.5px;color:#0B266B;background:#fff;width:100%;boxSizing:border-box;resize:vertical"></textarea>
+                </sc-if>
+
+                <sc-if value="{{ f.invalid }}" hint-placeholder-val="{{ false }}">
+                  <span role="alert" style="fontSize:12px;color:#A5341F;marginTop:6px">{{ f.errorText }}</span>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ quoteHasErrors }}" hint-placeholder-val="{{ false }}">
+            <p role="alert" style="fontSize:13px;color:#A5341F;marginTop:18px;border:1px solid #E7C9C1;background:#FBF3F1;padding:11px 13px">Some required fields still need completing.</p>
+          </sc-if>
+
+          <div style="display:flex;flexWrap:wrap;gap:12px;alignItems:center;marginTop:24px">
+            <button type="submit" style="background:#00A87E;color:#fff;fontSize:14.5px;fontWeight:700;padding:14px 26px;border:1px solid #00A87E;cursor:pointer;fontFamily:inherit" style-hover="background:#33C79E;borderColor:#33C79E">Submit Enquiry</button>
+            <a href="Contact.dc.html" style="fontSize:13.5px;fontWeight:600;color:#0B266B;textDecoration:none" style-hover="color:#00A87E">Open full contact page →</a>
+          </div>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:140},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1400, menuOpen: false };
+  state = {
+    w: typeof window !== 'undefined' ? window.innerWidth : 1400,
+    menuOpen: false,
+    quoteOpen: false,
+    quoteValues: {},
+    quoteErrors: {},
+    quoteSubmitted: false,
+    quoteTried: false
+  };
   componentDidMount() {
     this._r = () => this.setState({ w: window.innerWidth });
     window.addEventListener('resize', this._r);
@@ -81,6 +157,29 @@ class Component extends DCLogic {
       { num: '04', label: 'Medical Imaging & Oncology Solutions', note: 'Monitors, patient monitoring and imaging accessories.', href: 'Imaging-Oncology-Solutions.dc.html' },
       { num: '05', label: 'Technical & Project Services', note: 'Installation, unloading, shifting and dismantling support.', href: 'Technical-Services.dc.html' }
     ];
+
+    const quoteDefs = [
+      { id: 'name', label: 'Full Name *', kind: 'text', type: 'text', required: true },
+      { id: 'company', label: 'Company / Hospital *', kind: 'text', type: 'text', required: true },
+      { id: 'phone', label: 'Phone Number *', kind: 'text', type: 'tel', required: true },
+      { id: 'email', label: 'Email Address', kind: 'text', type: 'email', required: false },
+      { id: 'location', label: 'Location *', kind: 'text', type: 'text', required: true },
+      { id: 'service', label: 'Solution Required *', kind: 'select', required: true, options: ['', 'MRI Equipment & Accessories', 'CT & PET-CT Solutions', 'Cath-Lab Solutions', 'Medical Imaging & Oncology Solutions', 'Technical & Project Services', 'Other'] },
+      { id: 'contactMethod', label: 'Preferred Contact Method', kind: 'select', required: false, options: ['', 'Phone', 'Email', 'WhatsApp'] },
+      { id: 'details', label: 'Project Details *', kind: 'textarea', required: true, span: '1 / -1' }
+    ];
+    const qv = this.state.quoteValues, qe = this.state.quoteErrors;
+    const qSet = id => e => {
+      const val = e && e.target ? e.target.value : '';
+      this.setState(s => {
+        const nv = Object.assign({}, s.quoteValues, { [id]: val });
+        const ne = Object.assign({}, s.quoteErrors);
+        if (val) delete ne[id];
+        return { quoteValues: nv, quoteErrors: ne };
+      });
+    };
+    const quoteBody = quoteDefs.map(d => d.label.replace(' *', '') + ': ' + (qv[d.id] || '')).join('\n');
+
     return {
       isDesktop: this.state.w >= 1120,
       isMobile: this.state.w < 1120,
@@ -90,7 +189,31 @@ class Component extends DCLogic {
         label, href, isActive: active === label
       })),
       allLinks: nav.slice(0, 3).concat(serviceLinks.map(s => [s.label, s.href]), nav.slice(3))
-        .map(x => Array.isArray(x) ? { label: x[0], href: x[1] } : x)
+        .map(x => Array.isArray(x) ? { label: x[0], href: x[1] } : x),
+
+      quoteOpen: this.state.quoteOpen,
+      openQuote: () => this.setState({ quoteOpen: true, menuOpen: false }),
+      closeQuote: () => this.setState({ quoteOpen: false }),
+      quoteSubmitted: this.state.quoteSubmitted,
+      quoteFormVisible: !this.state.quoteSubmitted,
+      quoteHasErrors: this.state.quoteTried && Object.keys(qe).length > 0,
+      quoteMailtoHref: 'mailto:?subject=' + encodeURIComponent('Project enquiry — Medivo Healthcare') + '&body=' + encodeURIComponent(quoteBody),
+      quoteFields: quoteDefs.map(d => ({
+        id: d.id, label: d.label, type: d.type || 'text', options: d.options || [],
+        span: d.span || 'auto', required: !!d.required,
+        value: qv[d.id] || '', onChange: qSet(d.id),
+        invalid: !!qe[d.id],
+        errorText: 'This field is required.',
+        isText: d.kind === 'text', isSelect: d.kind === 'select',
+        isTextarea: d.kind === 'textarea'
+      })),
+      quoteOnSubmit: e => {
+        e.preventDefault();
+        const errors = {};
+        quoteDefs.forEach(d => { if (d.required && !(this.state.quoteValues[d.id] || '').trim()) errors[d.id] = true; });
+        if (Object.keys(errors).length) { this.setState({ quoteErrors: errors, quoteTried: true }); return; }
+        this.setState({ quoteErrors: {}, quoteTried: false, quoteSubmitted: true });
+      }
     };
   }
 }
