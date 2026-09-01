@@ -31,8 +31,8 @@
     <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:rgba(11,38,107,0.6);display:flex;gap:10px;marginBottom:30px">
       <a href="index.html" style="color:rgba(11,38,107,0.6);textDecoration:none">Home</a><span>/</span><span style="color:#0B266B">Safety &amp; Quality</span>
     </nav>
-    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:20ch;color:#00A87E">Safety and Quality at Every Stage</h1>
-    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:#0B266B;marginTop:22px;maxWidth:60ch;textWrap:pretty">Product sourcing and technical service delivery both happen inside operating healthcare facilities, around heavy equipment and near occupied departments. Sourcing and method are planned with that in mind.</p>
+    <h1 style="fontSize:clamp(32px,4.2vw,52px);lineHeight:1.08;letterSpacing:-0.025em;fontWeight:800;margin:0;maxWidth:34ch;color:#00A87E">Safety and Quality at Every Stage</h1>
+    <p style="fontSize:clamp(16px,1.2vw,18px);lineHeight:1.65;color:#0B266B;marginTop:22px;maxWidth:90ch;textWrap:pretty">Product sourcing and technical service delivery both happen inside operating healthcare facilities, around heavy equipment and near occupied departments. Sourcing and method are planned with that in mind.</p>
   </div>
 </section>
 
@@ -59,10 +59,19 @@
     </sc-for>
   </div>
 
-  <div style="maxWidth:1280px;margin:28px auto 0;border:1px solid #E2E7EC;background:#F4F6F8;padding:clamp(24px,3vw,36px)">
-    <h2 style="fontSize:clamp(19px,2.1vw,24px);fontWeight:800;letterSpacing:-0.015em;margin:0">Standards &amp; Certifications</h2>
-    <p style="fontSize:15px;lineHeight:1.7;color:#4A5A68;margin:14px 0 0;maxWidth:70ch">Certification and approval details are published only where they have been confirmed by Medivo Healthcare.</p>
-    <p style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;letterSpacing:0.12em;textTransform:uppercase;color:#0B266B;margin:16px 0 0">[DETAILS TO BE PROVIDED BY MEDIVO HEALTHCARE]</p>
+  <div style="maxWidth:1280px;margin:28px auto 0">
+    <div style="textAlign:center;maxWidth:56ch;margin:0 auto">
+      <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;fontWeight:700;letterSpacing:0.2em;textTransform:uppercase;color:#0B266B">Certifications</span>
+      <h2 style="fontSize:clamp(24px,3vw,34px);lineHeight:1.16;letterSpacing:-0.02em;fontWeight:800;margin:14px 0 0">Certified to Recognised Standards</h2>
+    </div>
+    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:1px;marginTop:40px;background:#E2E7EC;border:1px solid #E2E7EC">
+      <sc-for list="{{ certifications }}" as="c" hint-placeholder-count="5">
+        <div style="background:#fff;padding:28px 22px;textAlign:center;display:flex;flexDirection:column;alignItems:center;gap:14px">
+          <img src="{{ c.logo }}" alt="{{ c.title }}" style="height:64px;width:auto;maxWidth:100%;objectFit:contain" />
+          <h3 style="fontSize:14.5px;fontWeight:800;color:#0B266B;margin:0">{{ c.title }}</h3>
+        </div>
+      </sc-for>
+    </div>
   </div>
 </section>
 
@@ -91,6 +100,13 @@ class Component extends DCLogic {
         { num: '05', title: 'Inspection', desc: 'Delivered products and completed technical work are reviewed before handover, with applicable checks performed for the type of work carried out.', points: ['Visual and dimensional review', 'Applicable technical checks', 'Defects corrected before handover'] },
         { num: '06', title: 'Technical Documentation', desc: 'Orders and projects close out with the documentation required for the scope, so the facility has a record of what was supplied, installed and checked.', points: ['Record of products supplied and work carried out', 'Inspection and check records', 'Handover pack issued to the facility'] },
         { num: '07', title: 'Quality Assurance', desc: 'Quality is treated as a sequence of checkpoints across sourcing, delivery and technical execution rather than a final inspection, with communication to the facility at each stage.', points: ['Checkpoints at sourcing, execution and completion', 'Single point of contact during the order or project', 'Disruption to facility operations kept to a minimum'] }
+      ],
+      certifications: [
+        { title: 'ISO 9001:2015', logo: 'assets/Medivo%20logo/cert-iso-9001.png' },
+        { title: 'ISO 13485:2016', logo: 'assets/Medivo%20logo/cert-iso-13485.png' },
+        { title: 'CE Certified', logo: 'assets/Medivo%20logo/cert-ce.png' },
+        { title: 'COSCO Registered', logo: 'assets/Medivo%20logo/cert-cosco.png' },
+        { title: 'IEC Compliant', logo: 'assets/Medivo%20logo/cert-iec.png' }
       ]
     };
   }
