@@ -77,6 +77,28 @@
   </div>
 </section>
 
+<section aria-label="Related products" style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px) 0">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <div style="display:flex;flexWrap:wrap;justifyContent:space-between;alignItems:end;gap:16px">
+      <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">CT &amp; PET-CT Products</h2>
+      <a href="Products.dc.html" style="fontSize:14px;fontWeight:700;color:#00A87E;textDecoration:none">View all products →</a>
+    </div>
+    <div class="product-grid" style="display:grid;gridTemplateColumns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:18px;marginTop:36px">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="10">
+        <a href="Contact.dc.html" style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden;display:flex;flexDirection:column;color:inherit;textDecoration:none;background:#fff" style-hover="borderColor:#00A87E">
+          <div style="position:relative;aspectRatio:4/3;background:#fff;borderBottom:1px solid #EEF1F4">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" decoding="async" style="position:absolute;top:14px;left:14px;width:calc(100% - 28px);height:calc(100% - 28px);objectFit:contain;objectPosition:center;display:block" />
+          </div>
+          <div style="padding:16px;display:flex;flexDirection:column;flexGrow:1">
+            <h3 style="fontSize:14.5px;fontWeight:800;lineHeight:1.35;color:#0B266B;margin:0;flexGrow:1">{{ p.name }}</h3>
+            <span style="fontSize:13px;fontWeight:700;color:#00A87E;marginTop:12px">Request a Quote →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
 <section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
   <div style="maxWidth:1280px;margin:0 auto">
     <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">How We Work With You</h2>
@@ -144,11 +166,23 @@ class Component extends DCLogic {
     const faqData = [["Do you supply injector consumables on a recurring basis?","Yes. Syringes, patient sets and other injector consumables can be arranged as a recurring supply so the department does not run short."],["Can you support both CT and PET-CT departments?","Yes. The range covers CT injectors and PET-CT injectors along with the consumables and accessories used with each."],["Do you supply contrast-media administration accessories separately?","Yes, contrast-media administration accessories can be ordered on their own or together with injectors and consumables."]];
     return {
       offerings: [
-        { num: '01', title: 'CT & PET-CT Injectors', desc: 'CT injectors and PET-CT injectors for contrast-media administration.' },
-        { num: '02', title: 'Injector Consumables', desc: 'Syringes, patient sets and other consumables used with CT and PET-CT injectors.' },
+        { num: '01', title: 'CT & PET-CT Injectors', desc: 'Single and dual head CT and PET-CT pressure injectors for contrast-media administration.' },
+        { num: '02', title: 'Injector Consumables', desc: 'Pressure injector syringes, patient sets and other consumables used with CT and PET-CT injectors.' },
         { num: '03', title: 'Contrast-Media Accessories', desc: 'Contrast-media administration accessories and CT & PET-CT accessories.' },
-        { num: '04', title: 'Imaging Consumables', desc: 'Imaging consumables and other related medical equipment for CT and PET-CT departments.' }
+        { num: '04', title: 'Imaging Consumables', desc: 'Imaging consumables, lead glass, lead aprons, thyroid and gonad shields and CCTV accessories for CT and PET-CT departments.' }
       ],
+      products: [
+        ['Single and Dual Head Injector', 'single-dual-head-injector'],
+        ['Pressure Injector Syringes', 'pressure-injector-syringes'],
+        ['Consumables', 'consumables'],
+        ['Lead Glass', 'lead-glass'],
+        ['Lead Aprons (Skirt and Vest)', 'lead-apron-skirt-vest'],
+        ['Lead Aprons (Double Sided)', 'lead-apron-double-sided'],
+        ['Lead Aprons (Coat Apron)', 'lead-apron-coat'],
+        ['Thyroid Shield', 'thyroid-shield'],
+        ['Gonad Shield', 'gonad-shield'],
+        ['CCTV Accessories', 'cctv-accessories']
+      ].map(([name, file]) => ({ name, img: 'assets/products/' + file + '.webp' })),
       steps: [
         { num: '01', title: 'Requirement Discussion', desc: 'Equipment, consumable volumes and timeline are discussed.' },
         { num: '02', title: 'Product Selection', desc: 'Injectors, consumables and accessories matched to the department.' },

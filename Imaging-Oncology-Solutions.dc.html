@@ -77,6 +77,28 @@
   </div>
 </section>
 
+<section aria-label="Related products" style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px) 0">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <div style="display:flex;flexWrap:wrap;justifyContent:space-between;alignItems:end;gap:16px">
+      <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">Imaging &amp; Oncology Products</h2>
+      <a href="Products.dc.html" style="fontSize:14px;fontWeight:700;color:#00A87E;textDecoration:none">View all products →</a>
+    </div>
+    <div class="product-grid" style="display:grid;gridTemplateColumns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:18px;marginTop:36px">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="9">
+        <a href="Contact.dc.html" style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden;display:flex;flexDirection:column;color:inherit;textDecoration:none;background:#fff" style-hover="borderColor:#00A87E">
+          <div style="position:relative;aspectRatio:4/3;background:#fff;borderBottom:1px solid #EEF1F4">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" decoding="async" style="position:absolute;top:14px;left:14px;width:calc(100% - 28px);height:calc(100% - 28px);objectFit:contain;objectPosition:center;display:block" />
+          </div>
+          <div style="padding:16px;display:flex;flexDirection:column;flexGrow:1">
+            <h3 style="fontSize:14.5px;fontWeight:800;lineHeight:1.35;color:#0B266B;margin:0;flexGrow:1">{{ p.name }}</h3>
+            <span style="fontSize:13px;fontWeight:700;color:#00A87E;marginTop:12px">Request a Quote →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
 <section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
   <div style="maxWidth:1280px;margin:0 auto">
     <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">How We Work With You</h2>
@@ -144,11 +166,22 @@ class Component extends DCLogic {
     const faqData = [["Can you supply medical-grade monitors for a new department?","Yes. Medical-grade monitors and patient monitoring equipment can be supplied for new or upgraded imaging and oncology departments."],["Do you supply for oncology centres specifically?","Yes. Oncology centres are one of the environments covered by this portfolio, alongside general medical imaging departments."],["Is the product range fixed?","No. Medivo continuously expands the portfolio through partnerships with qualified manufacturers, suppliers and healthcare technology companies."]];
     return {
       offerings: [
-        { num: '01', title: 'Medical-Grade Monitors', desc: 'Medical-grade monitors and patient monitoring equipment for imaging and oncology use.' },
-        { num: '02', title: 'Imaging Accessories', desc: 'Imaging accessories used across medical imaging and oncology departments.' },
+        { num: '01', title: 'Medical-Grade Monitors', desc: 'Barco medical-grade monitors and patient monitoring equipment for imaging and oncology use.' },
+        { num: '02', title: 'Imaging Accessories', desc: 'X-ray chest stands, lead glass, lead aprons and thyroid and gonad shields used across imaging and oncology departments.' },
         { num: '03', title: 'Procedure-Related Equipment', desc: 'Procedure-related equipment and general medical equipment for these environments.' },
         { num: '04', title: 'Consumables', desc: 'Consumables and other healthcare technology products as required by the facility.' }
       ],
+      products: [
+        ['Barco Medical-Grade Monitors', 'barco-medical-grade-monitors'],
+        ['X Ray Chest Stand', 'x-ray-chest-stand'],
+        ['Lead Glass', 'lead-glass'],
+        ['Lead Aprons (Skirt and Vest)', 'lead-apron-skirt-vest'],
+        ['Lead Aprons (Double Sided)', 'lead-apron-double-sided'],
+        ['Lead Aprons (Coat Apron)', 'lead-apron-coat'],
+        ['Thyroid Shield', 'thyroid-shield'],
+        ['Gonad Shield', 'gonad-shield'],
+        ['Consumables', 'consumables']
+      ].map(([name, file]) => ({ name, img: 'assets/products/' + file + '.webp' })),
       steps: [
         { num: '01', title: 'Requirement Discussion', desc: 'Department, equipment and timeline are discussed.' },
         { num: '02', title: 'Product Selection', desc: 'Monitors, equipment and consumables matched to the requirement.' },

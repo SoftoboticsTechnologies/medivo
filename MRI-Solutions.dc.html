@@ -77,6 +77,28 @@
   </div>
 </section>
 
+<section aria-label="Related products" style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px) 0">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <div style="display:flex;flexWrap:wrap;justifyContent:space-between;alignItems:end;gap:16px">
+      <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">MRI Products</h2>
+      <a href="Products.dc.html" style="fontSize:14px;fontWeight:700;color:#00A87E;textDecoration:none">View all products →</a>
+    </div>
+    <div class="product-grid" style="display:grid;gridTemplateColumns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:18px;marginTop:36px">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="12">
+        <a href="Contact.dc.html" style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden;display:flex;flexDirection:column;color:inherit;textDecoration:none;background:#fff" style-hover="borderColor:#00A87E">
+          <div style="position:relative;aspectRatio:4/3;background:#fff;borderBottom:1px solid #EEF1F4">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" decoding="async" style="position:absolute;top:14px;left:14px;width:calc(100% - 28px);height:calc(100% - 28px);objectFit:contain;objectPosition:center;display:block" />
+          </div>
+          <div style="padding:16px;display:flex;flexDirection:column;flexGrow:1">
+            <h3 style="fontSize:14.5px;fontWeight:800;lineHeight:1.35;color:#0B266B;margin:0;flexGrow:1">{{ p.name }}</h3>
+            <span style="fontSize:13px;fontWeight:700;color:#00A87E;marginTop:12px">Request a Quote →</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
 <section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
   <div style="maxWidth:1280px;margin:0 auto">
     <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">How We Work With You</h2>
@@ -144,11 +166,25 @@ class Component extends DCLogic {
     const faqData = [["Are these products safe to use inside the MRI room?","Products intended for use in MRI environments are selected based on their applicable safety classification (for example MRI Safe or MRI Conditional), intended use and manufacturer specifications."],["Can you supply a full patient-care package for a new MRI suite?","Yes. Trolleys, wheelchairs, oxygen cylinders, pulse oximeters, monitoring equipment and room accessories can be supplied together for a new or upgraded MRI facility."],["Do you support facilities outside major cities?","Medivo Healthcare aims to build a trusted healthcare solutions network across India. Contact the team with your location and requirement."]];
     return {
       offerings: [
-        { num: '01', title: 'Patient Trolleys & Wheelchairs', desc: 'MRI patient trolleys and MRI wheelchairs suited to the magnet environment.' },
-        { num: '02', title: 'Oxygen & Monitoring Equipment', desc: 'MRI oxygen cylinders, MRI pulse oximeters and MRI-compatible patient monitoring equipment.' },
-        { num: '03', title: 'Patient-Care & Room Accessories', desc: 'MRI patient-care accessories, room accessories and patient transfer and positioning equipment.' },
-        { num: '04', title: 'Safety Accessories', desc: 'MRI safety accessories and other MRI accessories and equipment as required by the facility.' }
+        { num: '01', title: 'Patient Trolleys & Wheelchairs', desc: 'MRI patient trolleys, ABS MRI trolleys, MRI instrument trolleys and MRI wheelchairs suited to the magnet environment.' },
+        { num: '02', title: 'Oxygen & Monitoring Equipment', desc: 'MRI compatible oxygen cylinders, MRI pulse oximeters, MRI mobile I.V stands and MRI-compatible patient monitoring equipment.' },
+        { num: '03', title: 'Patient-Care & Room Accessories', desc: 'In-bore experience systems, MRI patient-care accessories, room accessories and patient transfer and positioning equipment.' },
+        { num: '04', title: 'Safety Accessories', desc: 'Walk-through door frame metal detectors (DFMD), hand held metal detectors, RF cage, CCTV accessories and other MRI safety accessories.' }
       ],
+      products: [
+        ['MRI Pulse Oximeter', 'mri-pulse-oximeter'],
+        ['MRI Patient Trolley', 'mri-patient-trolley'],
+        ['MRI Wheelchair', 'mri-wheelchair'],
+        ['MRI Compatible Oxygen Cylinder', 'mri-compatible-oxygen-cylinder'],
+        ['MRI Mobile I.V Stand', 'mri-mobile-iv-stand'],
+        ['ABS MRI Trolley', 'abs-mri-trolley'],
+        ['MRI Instrument Trolley', 'mri-instrument-trolley'],
+        ['In-bore Experience', 'in-bore-experience'],
+        ['Walk-through Door Frame Metal Detector (DFMD) & Handheld Metal Detector', 'dfmd-handheld-metal-detector'],
+        ['Hand Held Metal Detector', 'hand-held-metal-detector'],
+        ['RF Cage', 'rf-cage'],
+        ['CCTV Accessories', 'cctv-accessories']
+      ].map(([name, file]) => ({ name, img: 'assets/products/' + file + '.webp' })),
       steps: [
         { num: '01', title: 'Requirement Discussion', desc: 'The equipment, room and timeline are discussed with the facility.' },
         { num: '02', title: 'Product Selection', desc: 'Products are matched to the applicable safety classification and intended use.' },

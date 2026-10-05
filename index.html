@@ -22,21 +22,9 @@
   a { color:#0B266B; }
   a:hover { color:#0B266B; }
   *:focus-visible { outline:2px solid #0B266B; outline-offset:2px; }
-  .hero-stats-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
-  .hero-stat-item { display:flex; align-items:center; gap:12px; border-left:1px solid rgba(255,255,255,.15); padding-left:20px; }
-  .hero-stat-item:first-child { border-left:none; padding-left:0; }
-  @media (max-width:900px) {
-    .hero-stats-grid { grid-template-columns:repeat(2,1fr); row-gap:20px; }
-    .hero-stat-item { border-left:none !important; padding-left:0 !important; border-top:1px solid rgba(255,255,255,.15); padding-top:16px; }
-    .hero-stat-item:nth-child(-n+2) { border-top:none; padding-top:0; }
-  }
-  @media (max-width:480px) {
-    .hero-stats-grid { grid-template-columns:1fr; }
-    .hero-stat-item:nth-child(-n+2) { border-top:1px solid rgba(255,255,255,.15); padding-top:16px; }
-    .hero-stat-item:first-child { border-top:none; padding-top:0; }
-  }
+  @media (max-width:560px) { .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:12px !important; } }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Medivo Healthcare","description":"Medical equipment, imaging accessories, consumables and professional technical services for MRI, CT, PET-CT, Cath-Lab, Medical Imaging and Oncology.","url":"","telephone":"8800261800","email":"info@medivohealthcare.com","address":{"@type":"PostalAddress","streetAddress":"E-49, New Roshan Pura Extension, Near Subhash Chowk, Najafgarh Extension, New Delhi – 110043"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Medivo Healthcare","description":"Medical equipment, imaging accessories, consumables and professional technical services for MRI, CT, PET-CT, Cath-Lab, Medical Imaging and Oncology.","url":"","telephone":"8800261800","email":"info@medivohealthcare.com","address":{"@type":"PostalAddress","name":"MEDIVO HEALTHCARE PRIVATE LIMITED","streetAddress":"E-49, 8D Office, New Roshan Pura Extension, Hanuman Mandir, Najafgarh","addressLocality":"South West Delhi","addressRegion":"Delhi","postalCode":"110043","addressCountry":"IN"}}</script>
 </helmet>
 
 <div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B266B;background:#fff">
@@ -66,37 +54,13 @@
     </div>
   </div>
 
-  <div style="position:relative;borderTop:1px solid rgba(255,255,255,0.15)">
-    <div class="hero-stats-grid" style="maxWidth:1300px;margin:0 auto;padding:clamp(22px,3vw,32px) clamp(16px,3vw,40px)">
-      <div class="hero-stat-item">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 21v-6h6v6"></path><path d="M9 9h1"></path><path d="M14 9h1"></path><path d="M9 13h1"></path><path d="M14 13h1"></path></svg>
-        <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">500+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Hospitals Served</div></div>
-      </div>
-      <div class="hero-stat-item">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><path d="M21 8 12 3 3 8v8l9 5 9-5Z"></path><path d="M3 8l9 5 9-5"></path><path d="M12 13v8"></path></svg>
-        <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">1000+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Projects Delivered</div></div>
-      </div>
-      <div class="hero-stat-item">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-3.9 3.6-7 8-7s8 3.1 8 7"></path></svg>
-        <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">50+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Partners &amp; Vendors</div></div>
-      </div>
-      <div class="hero-stat-item">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
-        <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">25+</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Years of Experience</div></div>
-      </div>
-      <div class="hero-stat-item">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00A87E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flexShrink:0"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2Z"></path><path d="M3 19a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2Z"></path></svg>
-        <div><div style="fontSize:clamp(18px,1.8vw,22px);fontWeight:800;color:#fff;lineHeight:1">24/7</div><div style="fontSize:12.5px;color:rgba(255,255,255,0.72);marginTop:4px">Support Available</div></div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section aria-labelledby="portfolio-h" style="padding:clamp(40px,5vw,64px) clamp(16px,3vw,40px) 0">
   <div style="maxWidth:1280px;margin:0 auto">
     <div style="display:flex;alignItems:center;justifyContent:space-between;flexWrap:wrap;gap:12px;marginBottom:24px">
       <h2 id="portfolio-h" style="fontSize:clamp(19px,2vw,24px);fontWeight:800;letterSpacing:-0.015em;margin:0;color:#0B266B">Our Product Portfolio</h2>
-      <a href="Services.dc.html" style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;fontWeight:700;letterSpacing:0.12em;textTransform:uppercase;color:#00A87E;textDecoration:none;display:inline-flex;alignItems:center;gap:6px" style-hover="color:#0B266B">
+      <a href="Products.dc.html" style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;fontWeight:700;letterSpacing:0.12em;textTransform:uppercase;color:#00A87E;textDecoration:none;display:inline-flex;alignItems:center;gap:6px" style-hover="color:#0B266B">
         View All Products
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
       </a>
@@ -141,6 +105,31 @@
   </div>
 </section>
 
+<section aria-labelledby="products-h" style="padding:clamp(48px,6vw,80px) clamp(16px,3vw,40px) 0">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <div style="display:flex;alignItems:flex-start;justifyContent:space-between;flexWrap:wrap;gap:12px">
+      <div>
+        <h2 id="products-h" style="fontSize:clamp(20px,2.2vw,26px);fontWeight:800;letterSpacing:-0.015em;margin:0;color:#0B266B">Our Products</h2>
+        <span style="width:36px;height:3px;background:#00A87E;display:block;marginTop:10px"></span>
+      </div>
+      <a href="Products.dc.html" style="fontFamily:'IBM Plex Mono',monospace;fontSize:11px;fontWeight:700;letterSpacing:0.12em;textTransform:uppercase;color:#00A87E;textDecoration:none;display:inline-flex;alignItems:center;gap:6px" style-hover="color:#0B266B">
+        View All Products
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+    </div>
+    <div class="product-grid" style="display:grid;gridTemplateColumns:repeat(auto-fill,minmax(min(200px,100%),1fr));gap:18px;marginTop:32px">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="10">
+        <a href="Products.dc.html" style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden;display:flex;flexDirection:column;color:inherit;textDecoration:none;background:#fff" style-hover="borderColor:#00A87E">
+          <div style="position:relative;aspectRatio:4/3;background:#fff;borderBottom:1px solid #EEF1F4">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" decoding="async" style="position:absolute;top:14px;left:14px;width:calc(100% - 28px);height:calc(100% - 28px);objectFit:contain;objectPosition:center;display:block" />
+          </div>
+          <h3 style="fontSize:14.5px;fontWeight:800;lineHeight:1.35;color:#0B266B;margin:0;padding:14px 16px 16px">{{ p.name }}</h3>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
 <section aria-labelledby="imaging-h" style="padding:clamp(48px,6vw,80px) clamp(16px,3vw,40px)">
   <div style="maxWidth:1280px;margin:0 auto">
     <div style="display:flex;alignItems:flex-start;justifyContent:space-between;flexWrap:wrap;gap:12px">
@@ -175,20 +164,6 @@
         <h3 style="fontSize:15px;fontWeight:800;color:#0B266B;margin:14px 0 0">X-Ray Systems</h3>
         <p style="fontSize:13.5px;lineHeight:1.55;color:#5C6B78;margin:6px 0 0">Versatile solutions for digital radiography.</p>
       </a>
-      <a href="Services.dc.html" style="color:inherit;textDecoration:none;display:block">
-        <div style="aspectRatio:4/3;overflow:hidden;borderRadius:10px;background:#EDF0F3">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sonoscape Ultrasound Machine.jpg?width=600" alt="Ultrasound system" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" />
-        </div>
-        <h3 style="fontSize:15px;fontWeight:800;color:#0B266B;margin:14px 0 0">Ultrasound Systems</h3>
-        <p style="fontSize:13.5px;lineHeight:1.55;color:#5C6B78;margin:6px 0 0">Advanced imaging for better decisions.</p>
-      </a>
-      <a href="Services.dc.html" style="color:inherit;textDecoration:none;display:block">
-        <div style="aspectRatio:4/3;overflow:hidden;borderRadius:10px;background:#EDF0F3">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mobile X-ray image intensifier.JPG?width=600" alt="C-arm imaging system" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" />
-        </div>
-        <h3 style="fontSize:15px;fontWeight:800;color:#0B266B;margin:14px 0 0">C-Arms</h3>
-        <p style="fontSize:13.5px;lineHeight:1.55;color:#5C6B78;margin:6px 0 0">Precision imaging for interventional care.</p>
-      </a>
     </div>
   </div>
 </section>
@@ -202,26 +177,10 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
       </a>
     </div>
-    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(160px,100%),1fr));gap:16px">
+    <div style="display:grid;gridTemplateColumns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:16px">
       <div style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden">
         <div style="aspectRatio:4/3;background:#EDF0F3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aisha Hospital Main Entrance.jpg?width=400" alt="Hospitals" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" /></div>
         <p style="fontSize:13px;fontWeight:700;color:#0B266B;textAlign:center;padding:12px 8px;margin:0">Hospitals</p>
-      </div>
-      <div style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden">
-        <div style="aspectRatio:4/3;background:#EDF0F3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Building of Amin Diagnostic Center, Kushtia.jpg?width=400" alt="Diagnostic Centers" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" /></div>
-        <p style="fontSize:13px;fontWeight:700;color:#0B266B;textAlign:center;padding:12px 8px;margin:0">Diagnostic Centers</p>
-      </div>
-      <div style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden">
-        <div style="aspectRatio:4/3;background:#EDF0F3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Valentine Golden Ghanem Ghanaian medical scientist public health researcher and epidemiologist 2.jpg?width=400" alt="Research Institutions" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" /></div>
-        <p style="fontSize:13px;fontWeight:700;color:#0B266B;textAlign:center;padding:12px 8px;margin:0">Research Institutions</p>
-      </div>
-      <div style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden">
-        <div style="aspectRatio:4/3;background:#EDF0F3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Doppler Ultrasound and Vascular Sonography Examination in Navi Mumbai, Maharashtra, India.jpg?width=400" alt="Multi-Specialty Clinics" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" /></div>
-        <p style="fontSize:13px;fontWeight:700;color:#0B266B;textAlign:center;padding:12px 8px;margin:0">Multi-Specialty Clinics</p>
-      </div>
-      <div style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden">
-        <div style="aspectRatio:4/3;background:#EDF0F3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barnes Hospital at Kingshighway %26 Barnes Hospital Plaza (1993).jpg?width=400" alt="Ambulatory Surgical Centers" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" /></div>
-        <p style="fontSize:13px;fontWeight:700;color:#0B266B;textAlign:center;padding:12px 8px;margin:0">Ambulatory Surgical Centers</p>
       </div>
       <div style="border:1px solid #E2E7EC;borderRadius:10px;overflow:hidden">
         <div style="aspectRatio:4/3;background:#EDF0F3"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Massachusetts General Hospital, Bulfinch Building.jpg?width=400" alt="Government Healthcare" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" /></div>
@@ -473,75 +432,6 @@
   </div>
 </section>
 
-<section aria-labelledby="stats-h" style="position:relative;background:#0B266B;color:#fff;overflow:hidden">
-  <div style="position:absolute;inset:0;backgroundImage:radial-gradient(rgba(255,255,255,0.12) 1px,transparent 1px);backgroundSize:16px 16px;opacity:0.5"></div>
-  <div style="position:relative;maxWidth:1280px;margin:0 auto;padding:clamp(26px,3.4vw,42px) clamp(16px,3vw,40px);display:grid;gridTemplateColumns:minmax(0,2.3fr) minmax(240px,1fr);gap:clamp(24px,3vw,40px);alignItems:center">
-    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(110px,100%),1fr));gap:20px">
-      <div>
-        <div style="fontSize:clamp(20px,2vw,26px);fontWeight:800;color:#fff;lineHeight:1">25+</div>
-        <div style="fontSize:12px;color:rgba(255,255,255,0.72);marginTop:5px">Years of Experience</div>
-      </div>
-      <div>
-        <div style="fontSize:clamp(20px,2vw,26px);fontWeight:800;color:#fff;lineHeight:1">500+</div>
-        <div style="fontSize:12px;color:rgba(255,255,255,0.72);marginTop:5px">Hospitals Served</div>
-      </div>
-      <div>
-        <div style="fontSize:clamp(20px,2vw,26px);fontWeight:800;color:#fff;lineHeight:1">1000+</div>
-        <div style="fontSize:12px;color:rgba(255,255,255,0.72);marginTop:5px">Projects Delivered</div>
-      </div>
-      <div>
-        <div style="fontSize:clamp(20px,2vw,26px);fontWeight:800;color:#fff;lineHeight:1">24/7</div>
-        <div style="fontSize:12px;color:rgba(255,255,255,0.72);marginTop:5px">Support Available</div>
-      </div>
-      <div>
-        <div style="fontSize:clamp(20px,2vw,26px);fontWeight:800;color:#fff;lineHeight:1">18+</div>
-        <div style="fontSize:12px;color:rgba(255,255,255,0.72);marginTop:5px">States Covered</div>
-      </div>
-    </div>
-    <div style="background:#fff;color:#0B266B;borderRadius:10px;padding:18px 22px">
-      <h3 id="stats-h" style="fontSize:13.5px;fontWeight:800;margin:0">Certifications &amp; Compliance</h3>
-      <p style="fontSize:11.5px;color:#5C6B78;margin:4px 0 16px">Committed to the highest global standards</p>
-      <div style="display:flex;gap:14px;flexWrap:wrap">
-        <div style="textAlign:center">
-          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/cert-iso-9001.png" alt="ISO 9001:2015" style="width:100%;height:100%;objectFit:contain;display:block" />
-          </span>
-          <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">ISO</span>
-          <span style="display:block;fontSize:9.5px;color:#5C6B78">9001:2015</span>
-        </div>
-        <div style="textAlign:center">
-          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/cert-iso-13485.png" alt="ISO 13485:2016" style="width:100%;height:100%;objectFit:contain;display:block" />
-          </span>
-          <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">ISO</span>
-          <span style="display:block;fontSize:9.5px;color:#5C6B78">13485:2016</span>
-        </div>
-        <div style="textAlign:center">
-          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/cert-ce.png" alt="CE Certified" style="width:100%;height:100%;objectFit:contain;display:block" />
-          </span>
-          <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">CE</span>
-          <span style="display:block;fontSize:9.5px;color:#5C6B78">Certified</span>
-        </div>
-        <div style="textAlign:center">
-          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/cert-cosco.png" alt="COSCO Registered" style="width:100%;height:100%;objectFit:contain;display:block" />
-          </span>
-          <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">COSCO</span>
-          <span style="display:block;fontSize:9.5px;color:#5C6B78">Registered</span>
-        </div>
-        <div style="textAlign:center">
-          <span style="width:44px;height:44px;display:flex;alignItems:center;justifyContent:center;margin:0 auto;overflow:hidden">
-            <img src="assets/Medivo%20logo/cert-iec.png" alt="IEC Compliant" style="width:100%;height:100%;objectFit:contain;display:block" />
-          </span>
-          <span style="display:block;fontSize:10.5px;fontWeight:800;color:#0B266B;marginTop:6px">IEC</span>
-          <span style="display:block;fontSize:9.5px;color:#5C6B78">Compliant</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <dc-import name="Site-Footer" hint-size="100%,480px"></dc-import>
 </div>
 </x-dc>
@@ -561,6 +451,18 @@ class Component extends DCLogic {
       ['How can I request a quotation?', 'Contact Medivo by phone, email, WhatsApp, or through the enquiry form on the contact page.']
     ];
     return {
+      products: [
+        ['MRI Pulse Oximeter', 'mri-pulse-oximeter'],
+        ['MRI Patient Trolley', 'mri-patient-trolley'],
+        ['MRI Wheelchair', 'mri-wheelchair'],
+        ['Single and Dual Head Injector', 'single-dual-head-injector'],
+        ['Lead Aprons (Double Sided)', 'lead-apron-double-sided'],
+        ['X Ray Chest Stand', 'x-ray-chest-stand'],
+        ['Thyroid Shield', 'thyroid-shield'],
+        ['MRI Compatible Oxygen Cylinder', 'mri-compatible-oxygen-cylinder'],
+        ['Barco Medical-Grade Monitors', 'barco-medical-grade-monitors'],
+        ['RF Cage', 'rf-cage']
+      ].map(([name, file]) => ({ name, img: 'assets/products/' + file + '.webp' })),
       services: [
         { num: '01', title: 'MRI Equipment & Accessories', desc: 'Specialized products and accessories for MRI facilities, selected for applicable safety classification and intended use.', cta: 'Explore MRI Solutions →', href: 'MRI-Solutions.dc.html' },
         { num: '02', title: 'CT & PET-CT Solutions', desc: 'Equipment, accessories and consumables supporting CT and PET-CT imaging workflows, including injectors and consumables.', cta: 'Explore CT & PET-CT Solutions →', href: 'CT-PET-CT-Solutions.dc.html' },

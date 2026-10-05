@@ -66,13 +66,27 @@
   <div style="maxWidth:1280px;margin:0 auto">
     <h2 style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">Our Technical Services</h2>
     <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px;marginTop:36px">
-      <sc-for list="{{ offerings }}" as="o" hint-placeholder-count="5">
+      <sc-for list="{{ offerings }}" as="o" hint-placeholder-count="9">
         <div style="background:#fff;border:1px solid #E2E7EC;padding:28px">
           <span style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.16em;color:#0B266B">{{ o.num }}</span>
           <h3 style="fontSize:18px;fontWeight:700;margin:14px 0 0">{{ o.title }}</h3>
           <p style="fontSize:14.5px;lineHeight:1.7;color:#5C6B78;margin:12px 0 0">{{ o.desc }}</p>
         </div>
       </sc-for>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="skylight-h" style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px) 0">
+  <div style="maxWidth:1280px;margin:0 auto">
+    <h2 id="skylight-h" style="fontSize:clamp(24px,3vw,38px);lineHeight:1.14;letterSpacing:-0.02em;fontWeight:800;margin:0">MRI/CT/PET CT - Sky Light Ceiling Work</h2>
+    <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:20px;marginTop:36px">
+      <div style="aspectRatio:3/2;overflow:hidden;borderRadius:10px;background:#EDF0F3">
+        <img src="assets/services/sky-light-ceiling-mri.webp" alt="Sky light ceiling installed above an imaging scanner" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" />
+      </div>
+      <div style="aspectRatio:3/2;overflow:hidden;borderRadius:10px;background:#EDF0F3">
+        <img src="assets/services/sky-light-ceiling-ct-petct.webp" alt="Sky light ceiling in a CT and PET-CT suite" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" />
+      </div>
     </div>
   </div>
 </section>
@@ -144,11 +158,15 @@ class Component extends DCLogic {
     const faqData = [["Do you work with OEM engineers on installation?","Yes. Technical and project coordination is provided alongside hospitals, diagnostic centres, OEMs and contractors, and installation is coordinated according to applicable OEM and site specifications."],["Can you handle unloading and installation in one visit?","Yes. Unloading, handling and mechanical installation are often combined into a single planned sequence for a delivery."],["Do you provide dismantling for equipment being replaced or relocated?","Yes. Dismantling support covers movement preparation and coordination with OEMs, contractors and healthcare project teams."],["What other technical services are available?","Additional equipment-related technical and project-support services are available based on customer and project requirements — contact the team to discuss a specific need."]];
     return {
       offerings: [
-        { num: '01', title: 'Installation Support', desc: 'Professional installation support for medical equipment and associated systems, coordinated according to project requirements and applicable OEM/site specifications.' },
-        { num: '02', title: 'Unloading & Handling', desc: 'Safe and professionally planned unloading, handling and movement of medical equipment, with appropriate equipment, planning and safety procedures.' },
-        { num: '03', title: 'Equipment Shifting & Relocation', desc: 'Technical support for the shifting and relocation of medical equipment within hospitals, diagnostic centres and other healthcare facilities.' },
-        { num: '04', title: 'Dismantling Support', desc: 'Support for equipment dismantling, movement preparation and coordination with OEMs, contractors and healthcare project teams.' },
-        { num: '05', title: 'Site & Project Support', desc: 'Technical and project coordination support for medical equipment installations and healthcare projects.' }
+        { num: '01', title: 'MRI/CT/PET-CT Installation', desc: 'Complete installation, calibration and commissioning of MRI, CT & PET-CT systems.' },
+        { num: '02', title: 'Quench Pipe Services, Installation and Supplies', desc: 'Supply and installation of MRI quench vent pipe, cryogenic venting, outdoor exhaust termination as per safety norms.' },
+        { num: '03', title: 'MRI/CT/PET-CT Unloading', desc: 'Safe unloading of heavy imaging equipment with crane, forklift, manpower and shifting to site.' },
+        { num: '04', title: 'MRI/CT/PET CT - Sky Light Ceiling Work', desc: 'Sky light ceiling work for MRI, CT and PET-CT rooms.' },
+        { num: '05', title: 'Installation Support', desc: 'Professional installation support for medical equipment and associated systems, coordinated according to project requirements and applicable OEM/site specifications.' },
+        { num: '06', title: 'Unloading & Handling', desc: 'Safe and professionally planned unloading, handling and movement of medical equipment, with appropriate equipment, planning and safety procedures.' },
+        { num: '07', title: 'Equipment Shifting & Relocation', desc: 'Technical support for the shifting and relocation of medical equipment within hospitals, diagnostic centres and other healthcare facilities.' },
+        { num: '08', title: 'Dismantling Support', desc: 'Support for equipment dismantling, movement preparation and coordination with OEMs, contractors and healthcare project teams.' },
+        { num: '09', title: 'Site & Project Support', desc: 'Technical and project coordination support for medical equipment installations and healthcare projects.' }
       ],
       steps: [
         { num: '01', title: 'Requirement Discussion', desc: 'The equipment, site and project stage are discussed.' },
