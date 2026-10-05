@@ -79,17 +79,18 @@
     });
   }
 
-  // In 1px-gap grids the grid background shows through empty trailing slots;
-  // stretch the last cell across the leftover columns instead.
+  // 1px-gap grids draw their dividers with the grid background, which shows as a grey
+  // block when the last row is incomplete. Keep every cell the same size and switch
+  // those grids to per-cell outlines instead.
   function fillGrids() {
     document.querySelectorAll('[data-fx-grid]').forEach(function (grid) {
       var kids = Array.prototype.filter.call(grid.children, function (k) { return k.getAttribute('data-fx') === 'cell'; });
       if (kids.length < 2 || kids.length !== grid.children.length) return;
-      var last = kids[kids.length - 1];
-      last.style.gridColumn = '';
-      var cols = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
-      var rem = kids.length % cols;
-      if (cols > 1 && rem) last.style.gridColumn = 'span ' + (cols - rem + 1);
+      // open = the last row ends short of the grid's right edge (empty slots showing)
+      var g = grid.getBoundingClientRect(), l = kids[kids.length - 1].getBoundingClientRect();
+      var inner = g.right - (parseFloat(getComputedStyle(grid).borderRightWidth) || 0);
+      if (l.top > kids[0].getBoundingClientRect().top + 1 && l.right < inner - 2) grid.setAttribute('data-fx-open', '');
+      else grid.removeAttribute('data-fx-open');
     });
   }
 
