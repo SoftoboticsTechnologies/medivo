@@ -28,7 +28,7 @@
 <div style="fontFamily:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B266B;background:#fff">
 <dc-import name="Site-Header" active="Services" hint-size="100%,74px"></dc-import>
 
-<section style="position:relative;color:#0B266B;padding:clamp(20px,2.4vw,32px) clamp(16px,3vw,40px) clamp(24px,3vw,40px);borderBottom:1px solid #E2E7EC;backgroundImage:linear-gradient(100deg,rgba(255,255,255,0.96) 0%,rgba(255,255,255,0.9) 45%,rgba(255,255,255,0.72) 100%),url(http://static.investindia.gov.in/s3fs-public/2025-05/medical-technology-blog-banner-7.jpg);backgroundSize:cover;backgroundPosition:center;backgroundRepeat:no-repeat">
+<section style="position:relative;color:#0B266B;padding:clamp(20px,2.4vw,32px) clamp(16px,3vw,40px) clamp(24px,3vw,40px);borderBottom:1px solid #E2E7EC;backgroundImage:linear-gradient(100deg,rgba(255,255,255,0.96) 0%,rgba(255,255,255,0.9) 45%,rgba(255,255,255,0.72) 100%),url(assets/services/technical-services.webp);backgroundSize:cover;backgroundPosition:center;backgroundRepeat:no-repeat">
   <div style="maxWidth:1280px;margin:0 auto">
     <nav aria-label="Breadcrumb" style="fontFamily:'IBM Plex Mono',monospace;fontSize:10.5px;letterSpacing:0.14em;textTransform:uppercase;color:rgba(11,38,107,0.6);display:flex;gap:10px;marginBottom:32px">
       <a href="index.html" style="color:rgba(11,38,107,0.6);textDecoration:none">Home</a><span>/</span><span style="color:#0B266B">Solutions</span>
@@ -41,7 +41,7 @@
 <section style="padding:clamp(48px,6vw,88px) clamp(16px,3vw,40px)">
   <div style="maxWidth:1280px;margin:0 auto;display:grid;gap:1px;background:#E2E7EC;border:1px solid #E2E7EC">
     <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
-      <article style="background:#fff;padding:clamp(26px,3vw,40px);display:grid;gridTemplateColumns:minmax(min(240px,100%),320px) repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(24px,3vw,48px);alignItems:start">
+      <article style="background:#fff;padding:clamp(26px,3vw,40px);display:grid;gridTemplateColumns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(24px,3vw,48px);alignItems:start">
         <div style="aspectRatio:4/3;overflow:hidden;borderRadius:10px;background:#EDF0F3">
           <img src="{{ s.image }}" alt="{{ s.title }}" loading="lazy" decoding="async" style="width:100%;height:100%;objectFit:cover;display:block" />
         </div>
@@ -95,7 +95,7 @@ class Component extends DCLogic {
         { num: '02', title: 'CT & PET-CT Solutions', href: 'CT-PET-CT-Solutions.dc.html', cta: 'Explore CT & PET-CT Solutions →', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/MRI-tomograph.jpg?width=600', desc: 'Equipment, accessories and consumables supporting CT and PET-CT imaging workflows, including injectors and injector consumables.', points: ['Single and dual head injectors', 'Pressure injector syringes', 'Contrast-media administration accessories', 'Imaging consumables', 'Lead glass, lead aprons & shields'] },
         { num: '03', title: 'Cath-Lab Solutions', href: 'Cath-Lab-Solutions.dc.html', cta: 'Explore Cath-Lab Solutions →', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mobile X-ray image intensifier.JPG?width=600', desc: 'Supporting Cath-Lab and interventional imaging departments with selected accessories, medical equipment and consumables.', points: ['Lead aprons (skirt & vest, double sided, coat)', 'Thyroid & gonad shields', 'Lead glass', 'Barco medical-grade monitors', 'Procedure-related accessories & consumables'] },
         { num: '04', title: 'Medical Imaging & Oncology Solutions', href: 'Imaging-Oncology-Solutions.dc.html', cta: 'Explore Imaging & Oncology Solutions →', image: 'https://hinjawadi.rubyhall.com/wp-content/uploads/2023/05/Neuro-imaging-compressed-scaled.jpg', desc: 'Specialized medical equipment, accessories and consumables used in medical imaging and oncology environments.', points: ['Barco medical-grade monitors', 'X-ray chest stands', 'Lead glass, lead aprons & shields', 'Patient monitoring equipment', 'Consumables'] },
-        { num: '05', title: 'Technical & Project Services', href: 'Technical-Services.dc.html', cta: 'Explore Technical Services →', image: 'http://static.investindia.gov.in/s3fs-public/2025-05/medical-technology-blog-banner-7.jpg', desc: 'Professional technical and project-support services: MRI/CT/PET-CT installation, quench pipe work, unloading, sky light ceiling work, shifting, relocation and dismantling of medical equipment.', points: ['MRI/CT/PET-CT installation', 'Quench pipe services, installation & supplies', 'MRI/CT/PET-CT unloading', 'MRI/CT/PET CT sky light ceiling work', 'Equipment shifting & relocation', 'Dismantling & site/project support'] }
+        { num: '05', title: 'Technical & Project Services', href: 'Technical-Services.dc.html', cta: 'Explore Technical Services →', image: 'assets/services/technical-services.webp', desc: 'Professional technical and project-support services: MRI/CT/PET-CT installation, quench pipe work, unloading, sky light ceiling work, shifting, relocation and dismantling of medical equipment.', points: ['MRI/CT/PET-CT installation', 'Quench pipe services, installation & supplies', 'MRI/CT/PET-CT unloading', 'MRI/CT/PET CT sky light ceiling work', 'Equipment shifting & relocation', 'Dismantling & site/project support'] }
       ]
     };
   }

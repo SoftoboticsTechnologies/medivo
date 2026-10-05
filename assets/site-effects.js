@@ -79,6 +79,20 @@
     });
   }
 
+  // In 1px-gap grids the grid background shows through empty trailing slots;
+  // stretch the last cell across the leftover columns instead.
+  function fillGrids() {
+    document.querySelectorAll('[data-fx-grid]').forEach(function (grid) {
+      var kids = Array.prototype.filter.call(grid.children, function (k) { return k.getAttribute('data-fx') === 'cell'; });
+      if (kids.length < 2 || kids.length !== grid.children.length) return;
+      var last = kids[kids.length - 1];
+      last.style.gridColumn = '';
+      var cols = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+      var rem = kids.length % cols;
+      if (cols > 1 && rem) last.style.gridColumn = 'span ' + (cols - rem + 1);
+    });
+  }
+
   function scan() {
     var root = document.body;
     if (!root) return;
@@ -86,6 +100,7 @@
     tagGrids(root);
     tagImages(root);
     tagText(root);
+    fillGrids();
   }
 
   var pending = false;
@@ -106,6 +121,8 @@
     document.documentElement.classList.add('fx-ready');
     scan();
     new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(fillGrids, 150); });
     // later re-renders (FAQ toggles, dialogs) get hover effects but no entrance animation
     setTimeout(function () { revealOpen = false; }, 2500);
     // safety net: never leave content hidden

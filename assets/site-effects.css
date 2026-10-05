@@ -55,10 +55,22 @@ html.fx-ready [data-fx-hero] { animation: fx-rise .8s cubic-bezier(.2, .7, .3, 1
 
 /* WhatsApp button pulse */
 @keyframes fx-pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .5); } 70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-a[href^="https://wa.me"] { animation: fx-pulse 2.4s infinite; }
+.wa-btn { animation: fx-pulse 2.4s infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html.fx-ready [data-fx-reveal] { opacity: 1; transform: none; }
   [data-fx]:hover, [data-fx-img] { transform: none !important; }
+}
+
+/* ---------- Responsive safety net ---------- */
+img, video, svg { max-width: 100%; }
+h1, h2, h3, h4, p, li, span, a { overflow-wrap: break-word; }
+a[href^="mailto:"], a[href^="tel:"] { overflow-wrap: anywhere; }
+
+@media (max-width: 640px) {
+  /* 16px stops iOS from zooming into form fields */
+  input, select, textarea { font-size: 16px !important; }
+  /* centre the label in CTA buttons when they wrap */
+  section [data-fx="btn"] { text-align: center; }
 }
